@@ -10,11 +10,19 @@
 - Support remote control to control the robot "Kyle".
 - Virtual tour in the city.
 
+```
+                       +------------------ [Signalling server] ---------------+
+                       |                                                      |
+  [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome browser on smartphone]
+                                          <-- remote control --
+                
+```
+
 ## 3D model of Sabae city in Japan (distributed under CC-BY license)
 
 Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
 
-The 3D model is not included in this repo. Just down load it, inport it into Assets folder and extract tectures and materials in the folder.
+The 3D model is not included in this repo. Just download it, inport it into Assets folder and extract tectures and materials in the folder.
 
 ## Signalling server for Unity Render Streaming
 
