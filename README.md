@@ -9,6 +9,7 @@
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
 - Support remote control to control the robot "Kyle".
 - Virtual tour in the city.
+- Smart city simulation.
 
 ```
                        +------------------ [Signalling server] ---------------+
