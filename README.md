@@ -4,6 +4,12 @@
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
+## Goal of this project
+
+- Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
+- Support remote control to control the robot "Kyle".
+- Virtual tour in the city.
+
 ## 3D model of Sabae city in Japan (distributed under CC-BY license)
 
 Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
