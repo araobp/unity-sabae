@@ -35,3 +35,7 @@ All the following assets must be installed in the Assets folder properly:
 - /[Aa]ssets/Standard Assets/
 - /[Aa]ssets/Robot Kyle/
 - /[Aa]ssets/SabaeCity/
+
+## Reference
+
+- Unity Render Streaming: https://docs.unity3d.com/Packages/com.unity.renderstreaming@2.0/manual/index.html
