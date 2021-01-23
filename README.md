@@ -10,5 +10,10 @@ The 3D model is not included in this repo. Just down load it, inport it into Ass
 
 I use this signalling server for this project: https://github.com/araobp/signalling-server
 
+## Requirements
 
+All the following assets must be installed in the Assets folder properly:
 
+- /[Aa]ssets/Standard Assets/
+- /[Aa]ssets/Robot Kyle/
+- /[Aa]ssets/SabaeCity/
