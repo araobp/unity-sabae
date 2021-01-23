@@ -1,4 +1,4 @@
-# Unity smartcity
+# Unity smart city
 
 (Work in progress)
 
