@@ -1,5 +1,9 @@
 # unity-smartcity
 
+(Work in progress)
+
+<img src="/doc/screenshot_pixel4.jpg" width=500px>
+
 ## 3D model of Sabae city in Japan (distributed under CC-BY license)
 
 Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
