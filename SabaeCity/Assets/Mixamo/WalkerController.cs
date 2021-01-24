@@ -4,73 +4,125 @@ using UnityEngine;
 
 public class WalkerController : MonoBehaviour
 {
-    Animator animator;
-    bool walking = false;
-    bool turningLeft = false;
-    bool turningRight = false;
+    Animator m_animator;
+    bool m_turningLeft = false;
+    bool m_turningRight = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        if (turningLeft || Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            transform.Rotate(0, -0.5F, 0);
+            TurnLeft();
         }
-        if (turningRight || Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyUp(KeyCode.A))
         {
-            transform.Rotate(0, 0.5F, 0);
+            TurnLeftStop();
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TurnRight();
+        }
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            TurnRightStop();
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (!walking)
-            {
-                walking = true;
-                Walk();
-            }
-        } else if (Input.GetKeyUp(KeyCode.W))
-        {
-            if (walking)
-            {
-                walking = false;
-                Stop();
-            }
+            Walk();
         }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            Stop();
+        }
+
+        if (m_turningLeft)
+        {
+            transform.Rotate(0, -1F, 0);
+        }
+        if (m_turningRight)
+        {
+            transform.Rotate(0, 1F, 0);
+        }
+    }
+
+    bool IsStateName(string name)
+    {
+        return m_animator.GetCurrentAnimatorStateInfo(0).IsName(name);
     }
 
     void Walk()
     {
-        animator.SetTrigger("Walk");
+        if (!IsStateName("Walking"))
+        {
+            m_animator.SetTrigger("Walk");
+            if (m_turningLeft)
+            {
+                m_turningLeft = false;
+            }
+            if (m_turningRight)
+            {
+                m_turningRight = false;
+            }
+        }
+
     }
 
     void Stop()
     {
-        animator.SetTrigger("Stop");
+        if (IsStateName("Walking"))
+        {
+            m_animator.SetTrigger("Stop");
+            m_turningRight = false;
+            m_turningLeft = false;
+        }
     }
 
     void TurnLeft()
     {
-        turningLeft = true;
+        if (IsStateName("Walking"))
+        {
+            m_turningLeft = true;
+        }
+        else
+        {
+            m_animator.SetTrigger("TurnLeft");
+        }
     }
-    
+
     void TurnRight()
     {
-        turningRight = true;
+        if (IsStateName("Walking"))
+        {
+            m_turningRight = true;
+        }
+        else
+        {
+            m_animator.SetTrigger("TurnRight");
+        }
     }
 
     void TurnLeftStop()
     {
-        turningLeft = false;
+        if (IsStateName("Walking"))
+        {
+            m_turningLeft = false;
+        }
     }
 
     void TurnRightStop()
     {
-        turningRight = false;
+        if (IsStateName("Walking"))
+        {
+            m_turningRight = false;
+        }
     }
 
     /***** Buttons *****/
