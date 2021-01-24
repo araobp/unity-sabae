@@ -14,7 +14,7 @@ public class WalkerController : MonoBehaviour
         m_animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {

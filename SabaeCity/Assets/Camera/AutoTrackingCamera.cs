@@ -17,16 +17,16 @@ public class AutoTrackingCamera : MonoBehaviour
         _target = target.transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 move = _target.position - transform.position;
+        var lookAt = _target.position - transform.position;
+        lookAt.y = 0;
+        var rotation = Quaternion.LookRotation(lookAt);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * autoTurnSensitivity);
+
         if (move.magnitude > distance)
         {
-            var lookAt = _target.position - transform.position;
-            lookAt.y = 0;
-            var rotation = Quaternion.LookRotation(lookAt);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * autoTurnSensitivity);
-
             move = move.normalized * (move.magnitude - distance);
             Vector3 pos = transform.position + move;
             transform.position = new Vector3(pos.x, _target.position.y + relativeHeight, pos.z);
