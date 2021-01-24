@@ -138,13 +138,13 @@ public class WalkerController : MonoBehaviour
     // 11
     public void ButtonYTouchStart11()
     {
-
+        Walk();
     }
 
     // 12
     public void ButtonYTouchEnd12()
     {
-
+        Stop();
     }
 
     /***** Arrow Keys *****/
