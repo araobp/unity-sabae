@@ -4,6 +4,8 @@
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
+[The location on the Google map](https://www.google.com/maps/place/Sabae,+Fukui/@35.9463339,136.1851007,19z)
+
 The image above is a screenshot of video streaming from Unity Render Steraming to Google Pixel4
 
 My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
