@@ -892,6 +892,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab746671fdf01e4882f4fe1dcb70067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1504248260
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504248256}
+  serializedVersion: 2
+  m_Mass: 70
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &1504248261
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504248256}
+  m_Material: {fileID: 13400000, guid: 3aeb7dadc0c69d54d9e5777e9d5631f1, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3.701542
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.8460531, z: 0}
 --- !u!1001 &1528559651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,9 +1075,9 @@ MonoBehaviour:
     click:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 6
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonAClick1
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1060,9 +1090,9 @@ MonoBehaviour:
     click:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 705507993}
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonBClick2
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1075,8 +1105,323 @@ MonoBehaviour:
     click:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: Play
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonXClick3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 4
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonYClick4
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 5
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonATouchStart5
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 6
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonATouchEnd6
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 7
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonBTouchStart7
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 8
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonBTouchEnd8
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 9
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonXTouchStart9
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 10
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonXTouchEnd10
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 11
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonYTouchStart11
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 12
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ButtonYTouchEnd12
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 13
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowDownClick13
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 14
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowRightClick14
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 15
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowLeftClick15
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 16
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowUpClick16
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 17
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowDownTouchStart17
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 18
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowDownTouchEnd18
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 19
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowRightTouchStart19
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 20
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowRightTouchEnd20
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 21
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowLeftTouchStart21
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 22
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowLeftTouchEnd22
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 23
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowUpClickTouchStart23
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - elementId: 24
+    click:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1504248259}
+          m_MethodName: ArrowUpClickTouchEnd24
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
