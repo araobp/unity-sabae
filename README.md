@@ -41,3 +41,4 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ## Reference
 
 - Unity Render Streaming: https://docs.unity3d.com/Packages/com.unity.renderstreaming@2.0/manual/index.html
+- Mixamo: https://www.mixamo.com/#/
