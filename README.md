@@ -11,9 +11,8 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 ## Goal of this project
 
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
-- Support remote control to control the robot "Kyle".
 - Virtual tour in the city.
-- Smart city simulation.
+- Smart city simulation: surveillance cameras, traffic signals, self-driving buses, platform doors in the station etc. 
 
 ```
                        +------------------ [Signalling server] ---------------+
