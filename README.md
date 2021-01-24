@@ -6,6 +6,8 @@
 
 The image above is a screenshot of video streaming from Unity Render Steraming to Google Pixel4
 
+My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
+
 ## Goal of this project
 
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
