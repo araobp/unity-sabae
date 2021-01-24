@@ -29,13 +29,9 @@ Its 3D model is provided in SketchUp format (skp) on the following web site (Jap
 
 The 3D model is not included in this repo. Just download it, inport it into Assets folder and extract tectures and materials in the folder.
 
-## Requirements
-
-All the following assets must be installed in the Assets folder properly:
-
-- /[Aa]ssets/Standard Assets/
-- /[Aa]ssets/Robot Kyle/
-- /[Aa]ssets/SabaeCity/
+```
+/Assets/SabaeCity/
+```
 
 ## Reference
 
