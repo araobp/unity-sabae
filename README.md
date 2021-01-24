@@ -4,6 +4,8 @@
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
+The image above is a screenshot of video streaming from Unity Render Steraming to Google Pixel4
+
 ## Goal of this project
 
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
