@@ -24,9 +24,10 @@ This project is to prove that my expectaion on digital twin is right.
 
 ## Goal of this project
 
-- Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
-- Virtual tour in the city.
+- Stream 3D digital twin of Sabae（鯖江）city to my smartphone via RTP media with help from WebRTC.
+- Virtual tour in the city of 鯖江.
 - Smart city simulation: surveillance cameras, traffic signals, self-driving buses, platform doors in the station etc. 
+- Remote tourist information services.
 
 ```
                        +------------------ [Signalling server] ---------------+
