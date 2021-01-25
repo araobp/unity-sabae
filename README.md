@@ -20,6 +20,8 @@ Just integrate digital twin with WebRTC-based communication services such as Sky
 
 A camera on Unity will work as a virtual camera that streams video to a video element on HTML5.
 
+This project is to prove that my expectaion on digital twin is right.
+
 ## Goal of this project
 
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
