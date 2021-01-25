@@ -44,6 +44,15 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.recorder": {
+      "version": "2.5.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.2.17"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.renderstreaming": {
       "version": "2.2.2-preview",
       "depth": 0,

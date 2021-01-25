@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AutoTrackingCamera : MonoBehaviour
 {
@@ -27,7 +25,7 @@ public class AutoTrackingCamera : MonoBehaviour
         }
 
         Vector3 move = _target.position - transform.position;
-        var lookAt = (_target.position - transform.position).normalized;
+        var lookAt = move.normalized;
         lookAt.y = 0;
         var rotation = Quaternion.LookRotation(lookAt);
         transform.rotation = rotation;
