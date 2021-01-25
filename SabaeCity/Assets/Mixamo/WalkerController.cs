@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WalkerController : MonoBehaviour
 {
+    public float rotationSpeed = 2F;
+
     Animator m_animator;
     bool m_turningLeft = false;
     bool m_turningRight = false;
@@ -45,11 +47,11 @@ public class WalkerController : MonoBehaviour
 
         if (m_turningLeft)
         {
-            transform.Rotate(0, -1F, 0);
+            transform.Rotate(0, -rotationSpeed, 0);
         }
         if (m_turningRight)
         {
-            transform.Rotate(0, 1F, 0);
+            transform.Rotate(0, rotationSpeed, 0);
         }
     }
 
