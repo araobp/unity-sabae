@@ -16,6 +16,10 @@ Digital twin with WebRTC will become a killer-app for remote sales and remote ma
 
 It will be something like a call centers with digital twin.
 
+Just integrate digital twin with WebRTC-based communication services such as SkyWay from NTT Communcations.
+
+A camera on Unity will work as a virtual camera that streams video to a video element on HTML5.
+
 ## Goal of this project
 
 - Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
