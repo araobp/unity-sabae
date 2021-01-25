@@ -38,6 +38,18 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 /Assets/SabaeCity/
 ```
 
+## Sightseeing spots in the digital twin
+
+<img src="/doc/spot1.jpg" width=400px>
+
+<img src="/doc/spot2.jpg" width=400px>
+
+<img src="/doc/spot3.jpg" width=400px>
+
+<img src="/doc/spot4.jpg" width=400px>
+
+<img src="/doc/spot5.jpg" width=400px>
+
 ## Reference
 
 - Unity Render Streaming: https://docs.unity3d.com/Packages/com.unity.renderstreaming@2.0/manual/index.html
