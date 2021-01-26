@@ -10,6 +10,10 @@ The image above is a screenshot of video streaming from Unity Render Steraming t
 
 My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
 
+## Demo video
+
+https://youtu.be/mACBBLufDp0
+
 ## Motivation
 
 I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
