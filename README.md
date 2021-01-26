@@ -10,11 +10,24 @@ The image above is a screenshot of video streaming from Unity Render Steraming t
 
 My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
 
+## Demo video
+
+https://youtu.be/mACBBLufDp0
+
+## Motivation
+
+I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
+
+It will be something like a call center with digital twin.
+
+This project is to prove that my expectaion on digital twin is right.
+
 ## Goal of this project
 
-- Stream 3D digital twin of Sabae city to my smartphone via RTP media with help from WebRTC.
-- Virtual tour in the city.
+- Stream 3D digital twin of Sabae（鯖江）city to my smartphone via RTP media with help from WebRTC.
+- Virtual tour in the city of 鯖江.
 - Smart city simulation: surveillance cameras, traffic signals, self-driving buses, platform doors in the station etc. 
+- Remote tourist information services.
 
 ```
                        +------------------ [Signalling server] ---------------+
@@ -37,6 +50,18 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
+
+## Sightseeing spots in the digital twin
+
+<img src="/doc/spot1.jpg" width=400px>
+
+<img src="/doc/spot2.jpg" width=400px>
+
+<img src="/doc/spot3.jpg" width=400px>
+
+<img src="/doc/spot4.jpg" width=400px>
+
+<img src="/doc/spot5.jpg" width=400px>
 
 ## Reference
 
