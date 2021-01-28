@@ -1013,7 +1013,7 @@ RectTransform:
   m_Children:
   - {fileID: 1447849323}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1683,6 +1683,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7673700787338036801, guid: d73052730dfb0da4689931924d168a98, type: 3}
+--- !u!1 &1268429468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268429469}
+  m_Layer: 0
+  m_Name: TrafficSignals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1268429469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268429468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 212.11101, y: -0.009057218, z: 428.34045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1496203331}
+  - {fileID: 2012684134}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1270308472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5454882282743103963, guid: d73052730dfb0da4689931924d168a98,
@@ -2446,16 +2478,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496203329}
-  m_LocalRotation: {x: 0.020962175, y: -0.008894001, z: -0.022537503, w: 0.99948674}
-  m_LocalPosition: {x: 0.101876274, y: 12.930979, z: 18.324547}
+  m_LocalRotation: {x: 0.020962173, y: -0.008894001, z: -0.022537502, w: 0.99948674}
+  m_LocalPosition: {x: -212.00912, y: 12.940036, z: -410.0159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1436059964}
   - {fileID: 1182004876}
   - {fileID: 562173961}
   - {fileID: 827303627}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1268429469}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.3790002, y: -1.074, z: -2.6060002}
 --- !u!1 &1504248256 stripped
 GameObject:
@@ -3411,7 +3443,7 @@ GameObject:
   - component: {fileID: 2012684134}
   - component: {fileID: 2012684133}
   m_Layer: 0
-  m_Name: TrafficSignals2
+  m_Name: TrafficSignals5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3437,16 +3469,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012684132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 276.12927, y: 2.8853228, z: -317.80505}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64.018265, y: 2.89438, z: -746.1455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1605984917}
   - {fileID: 163100953}
   - {fileID: 1094514994}
   - {fileID: 1717693992}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1268429469}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042743006 stripped
 GameObject:
