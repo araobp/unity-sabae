@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PedestrianTrafficSignal : MonoBehaviour
+public class PedestrianTrafficSignal : MonoBehaviour, ITrafficSignal
 {
     public GameObject signal;
 
@@ -24,7 +24,6 @@ public class PedestrianTrafficSignal : MonoBehaviour
                 matBlue.DisableKeyword("_EMISSION");
             }
         }
-        signal.GetComponent<MeshRenderer>().materials = materials;
     }
 
     void EnableEmission(Material mat0, Material mat1)
@@ -41,6 +40,11 @@ public class PedestrianTrafficSignal : MonoBehaviour
     public void Red()
     {
         EnableEmission(matRed, matBlue);
+    }
+
+    public void Yellow()
+    {
+
     }
 
     public void Blue()

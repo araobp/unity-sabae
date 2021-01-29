@@ -6,18 +6,37 @@ public class TrafficSignalController : MonoBehaviour
 {
     public float duration = 20F;
 
-    TrafficSignal[] a;
-    TrafficSignal[] b;
-    PedestrianTrafficSignal[] ap;
-    PedestrianTrafficSignal[] bp;
+    ITrafficSignal[] a = { new TrafficSignalNull() }; 
+    ITrafficSignal[] b = { new TrafficSignalNull() };
+    ITrafficSignal[] ap = { new TrafficSignalNull() };
+    ITrafficSignal[] bp = { new TrafficSignalNull() };
 
     // Start is called before the first frame update
     void Start()
     {
-        a = transform.Find("A").GetComponents<TrafficSignal>();
-        b = transform.Find("B").GetComponents<TrafficSignal>();
-        ap = transform.Find("AP").GetComponents<PedestrianTrafficSignal>();
-        bp = transform.Find("BP").GetComponents<PedestrianTrafficSignal>();
+        Transform A = transform.Find("A");
+        if (A != null) {
+            a = A.GetComponents<TrafficSignal2>();
+        }
+
+        Transform B = transform.Find("B");
+        if (B != null)
+        {
+            b = B.GetComponents<TrafficSignal2>();
+        }
+
+        Transform AP = transform.Find("AP");
+        if (AP != null)
+        {
+            ap = AP.GetComponents<PedestrianTrafficSignal>();
+        }
+
+        Transform BP = transform.Find("BP");
+        if (BP != null)
+        {
+            bp = BP.GetComponents<PedestrianTrafficSignal>();
+        }
+
         SignalLoop();
     }
 

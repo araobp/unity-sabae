@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrafficSignal : MonoBehaviour
+public class TrafficSignal : MonoBehaviour, ITrafficSignal
 {
     public GameObject red;
     public GameObject yellow;
@@ -46,6 +46,13 @@ public class TrafficSignal : MonoBehaviour
         mat0.EnableKeyword("_EMISSION");
         mat1.DisableKeyword("_EMISSION");
         mat2.DisableKeyword("_EMISSION");
+    }
+
+    public void Off()
+    {
+        matRed.DisableKeyword("_EMISSION");
+        matYellow.DisableKeyword("_EMISSION");
+        matBlue.DisableKeyword("_EMISSION");
     }
 
     public void Red()
