@@ -14,7 +14,7 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 https://youtu.be/mACBBLufDp0
 
-## Web site of this project (English and Japanese)
+## Web site of this project
 
 https://araobp.github.io/unity-smartcity/
 
