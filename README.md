@@ -14,10 +14,6 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 https://youtu.be/mACBBLufDp0
 
-## Web site of this project
-
-https://araobp.github.io/unity-smartcity/
-
 ## Motivation
 
 I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
@@ -54,6 +50,10 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
+
+## My original 3D models designed with Blender
+
+https://araobp.github.io/unity-smartcity/
 
 ## Sightseeing spots in the digital twin
 
