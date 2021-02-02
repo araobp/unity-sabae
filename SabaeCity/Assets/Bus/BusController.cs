@@ -8,6 +8,8 @@ public class BusController : MonoBehaviour
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
+    private float pedalFreePlay;
+
     Rigidbody rb;
 
     [System.Serializable]
@@ -21,6 +23,7 @@ public class BusController : MonoBehaviour
 
     void Start()
     {
+        pedalFreePlay = maxMotorTorque * 0.1F;
         rb = GetComponent<Rigidbody>();    
     }
 
@@ -31,6 +34,17 @@ public class BusController : MonoBehaviour
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
+            Debug.Log(motor);
+            if (motor > pedalFreePlay)
+            {
+                axleInfo.leftWheel.brakeTorque = 0;
+                axleInfo.rightWheel.brakeTorque = 0;
+            } else
+            {
+                var brake = Mathf.Abs(motor);
+                axleInfo.leftWheel.brakeTorque = brake;
+                axleInfo.rightWheel.brakeTorque = brake;
+            }
             if (axleInfo.steering)
             {
                 axleInfo.leftWheel.steerAngle = steering;
@@ -38,18 +52,15 @@ public class BusController : MonoBehaviour
             }
             if (axleInfo.motor)
             {
-                if (motor >= 0)
+                if (motor > pedalFreePlay)
                 {
-                    axleInfo.leftWheel.brakeTorque = 0;
-                    axleInfo.rightWheel.brakeTorque = 0;
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
                 } else
                 {
-                    axleInfo.leftWheel.brakeTorque = -motor;
-                    axleInfo.rightWheel.brakeTorque = -motor;
+                    axleInfo.leftWheel.motorTorque = 0;
+                    axleInfo.rightWheel.motorTorque = 0;
                 }
-
             }
         }
     }

@@ -194,6 +194,8 @@ QualitySettings:
     excludedTargetPlatforms:
     - Standalone
     - Android
+    - WebGL
+    - iPhone
   - serializedVersion: 2
     name: Ultra
     pixelLightCount: 4
@@ -232,6 +234,8 @@ QualitySettings:
     excludedTargetPlatforms:
     - Standalone
     - Android
+    - WebGL
+    - iPhone
   m_PerPlatformDefaultQuality:
     Android: 2
     Lumin: 5
