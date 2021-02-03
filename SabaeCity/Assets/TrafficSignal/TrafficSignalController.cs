@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -37,12 +38,12 @@ public class TrafficSignalController : MonoBehaviour
             bp = BP.GetComponents<PedestrianTrafficSignal>();
         }
 
-        SignalLoop();
+        StartCoroutine("SignalLoop");
     }
 
-    async void SignalLoop()
+    IEnumerator SignalLoop()
     {
-        await Task.Delay(TimeSpan.FromSeconds(2));
+        yield return new WaitForSeconds(2);
 
         string blueSide = "A";
 
@@ -56,23 +57,26 @@ public class TrafficSignalController : MonoBehaviour
                     {
                         tf.Off();
                     }
-                    await Task.Delay(TimeSpan.FromSeconds(0.25));
+                    yield return new WaitForSeconds(0.25F);
+
                     foreach (var tf in ap)
                     {
                         tf.Blue();
                     }
-                    await Task.Delay(TimeSpan.FromSeconds(0.25));
+                    yield return new WaitForSeconds(0.25F);
                 }
                 foreach (var tf in ap)
                 {
                     tf.Red();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                yield return new WaitForSeconds(1);
+
                 foreach (var tf in a)
                 {
                     tf.Yellow();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(2));
+                yield return new WaitForSeconds(2);
+
                 foreach (var tf in a)
                 {
                     tf.Red();
@@ -81,7 +85,8 @@ public class TrafficSignalController : MonoBehaviour
                 {
                     tf.Blue();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                yield return new WaitForSeconds(1);
+
                 foreach (var tf in bp)
                 {
                     tf.Blue();
@@ -96,23 +101,26 @@ public class TrafficSignalController : MonoBehaviour
                     {
                         tf.Off();
                     }
-                    await Task.Delay(TimeSpan.FromSeconds(0.25));
+                    yield return new WaitForSeconds(0.25F);
+
                     foreach (var tf in bp)
                     {
                         tf.Blue();
                     }
-                    await Task.Delay(TimeSpan.FromSeconds(0.25));
+                    yield return new WaitForSeconds(0.25F);
                 }
                 foreach (var tf in bp)
                 {
                     tf.Red();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(1));
+                yield return new WaitForSeconds(1);
+
                 foreach (var tf in b)
                 {
                     tf.Yellow();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(2));
+                yield return new WaitForSeconds(2);
+
                 foreach (var tf in b)
                 {
                     tf.Red();
@@ -121,14 +129,15 @@ public class TrafficSignalController : MonoBehaviour
                 {
                     tf.Blue();
                 }
-                await Task.Delay(TimeSpan.FromSeconds(1));
+
+                yield return new WaitForSeconds(1);
                 foreach (var tf in ap)
                 {
                     tf.Blue();
                 }
                 blueSide = "A";
             }
-            await Task.Delay(TimeSpan.FromSeconds(duration));
+            yield return new WaitForSeconds(duration);
         }
     }
 
