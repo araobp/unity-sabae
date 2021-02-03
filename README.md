@@ -16,7 +16,7 @@ https://youtu.be/mACBBLufDp0
 
 ## Motivation
 
-I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
+I expect that digital twin with WebGL and WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
 
 It will be something like a call center with digital twin.
 
@@ -24,12 +24,16 @@ This project is to prove that my expectaion on digital twin is right.
 
 ## Goal of this project
 
-- Stream 3D digital twin of Sabae（鯖江）city to my smartphone via RTP media with help from WebRTC.
+- Run HTML5-based digital twin of Sabae（鯖江）city on Chrome/Firefox browser.
+- Or stream 3D digital twin of the city to my smartphone via RTP media with help from WebRTC.
 - Virtual tour in the city of 鯖江.
-- Smart city simulation: surveillance cameras, traffic signals, self-driving buses, platform doors in the station etc. 
+- Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
 - Remote tourist information services.
 
 ```
+
+  [3D digital twin of Sabae city on Unity] ---- HTML5/WebGL ---> [Chrome browser on smartphone]
+
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
   [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome browser on smartphone]
