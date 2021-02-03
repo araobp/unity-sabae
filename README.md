@@ -10,9 +10,11 @@ The image above is a screenshot of video streaming from Unity Render Steraming t
 
 My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
 
-## Demo video
+## Demo
 
-https://youtu.be/mACBBLufDp0
+[YouTube] https://youtu.be/mACBBLufDp0
+
+[WebGL-version] https://araobp.github.io/unity-smartcity/
 
 ## Motivation
 
@@ -54,10 +56,6 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
-
-## My original 3D models designed with Blender
-
-https://araobp.github.io/unity-smartcity/
 
 ## Sightseeing spots in the digital twin
 
