@@ -5,12 +5,13 @@ using UnityEngine;
 public class BusController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos; // the information about each individual axle
+
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
 
-    private float pedalFreePlay;
+    public GameObject steeringWheel;
 
-    Rigidbody rb;
+    private float pedalFreePlay;
 
     [System.Serializable]
     public class AxleInfo
@@ -23,8 +24,7 @@ public class BusController : MonoBehaviour
 
     void Start()
     {
-        pedalFreePlay = maxMotorTorque * 0.1F;
-        rb = GetComponent<Rigidbody>();    
+        pedalFreePlay = maxMotorTorque * 0.1F;        
     }
 
     void FixedUpdate()
@@ -34,7 +34,6 @@ public class BusController : MonoBehaviour
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
-            Debug.Log(motor);
             if (motor > pedalFreePlay)
             {
                 axleInfo.leftWheel.brakeTorque = 0;
@@ -49,11 +48,18 @@ public class BusController : MonoBehaviour
             {
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
+                axleInfo.leftWheel.transform.localRotation = Quaternion.Euler(-90, 0, steering);
+                axleInfo.rightWheel.transform.localRotation = Quaternion.Euler(-90, 0, steering);
+
+                steeringWheel.transform.localRotation = Quaternion.Euler(-90, 0, steering * 2);
             }
             if (axleInfo.motor)
             {
                 if (motor > pedalFreePlay)
                 {
+                    if (Input.GetKey(KeyCode.R)) {
+                        motor = -motor / 2F;
+                    }
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
                 } else
