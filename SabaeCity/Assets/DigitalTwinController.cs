@@ -16,15 +16,30 @@ public class DigitalTwinController : MonoBehaviour
     public GameObject walkerCamera;
     public GameObject busCamera;
 
+    public GameObject walkerHelp;
+    public GameObject busHelp;
+
     Mode mode;
+
+    private void enableBus(bool state)
+    {
+        bus.GetComponent<BusController>().enabled = state;
+        busCamera.SetActive(state);
+        busHelp.SetActive(state);
+    }
+
+    private void enableWalker(bool state)
+    {
+        walker.GetComponent<WalkerController>().enabled = state;
+        walkerCamera.SetActive(state);
+        walkerHelp.SetActive(state);
+    }
 
     private void Start()
     {
-        mode = Mode.WALKER;
-        walker.GetComponent<WalkerController>().enabled = true;
-        walkerCamera.SetActive(true);
-        bus.GetComponent<BusController>().enabled = false;
-        busCamera.SetActive(false);
+        mode = Mode.BUS;
+        enableBus(true);
+        enableWalker(false);
     }
 
     // Update is called once per frame
@@ -35,18 +50,14 @@ public class DigitalTwinController : MonoBehaviour
             if (mode == Mode.WALKER)
             {
                 mode = Mode.BUS;
-                walker.GetComponent<WalkerController>().enabled = false;
-                walkerCamera.SetActive(false);
-                bus.GetComponent<BusController>().enabled = true;
-                busCamera.SetActive(true);
+                enableBus(true);
+                enableWalker(false);
             }
             else
             {
                 mode = Mode.WALKER;
-                walker.GetComponent<WalkerController>().enabled = true;
-                walkerCamera.SetActive(true);
-                bus.GetComponent<BusController>().enabled = false;
-                busCamera.SetActive(false);
+                enableBus(false);
+                enableWalker(true);
             }
         }        
     }

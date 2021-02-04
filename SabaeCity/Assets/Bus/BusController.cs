@@ -12,6 +12,9 @@ public class BusController : MonoBehaviour
     public GameObject steeringWheel;
 
     private float pedalFreePlay;
+    private float steeringPrev = 0F;
+
+    private Rigidbody rb;
 
     [System.Serializable]
     public class AxleInfo
@@ -24,26 +27,52 @@ public class BusController : MonoBehaviour
 
     void Start()
     {
-        pedalFreePlay = maxMotorTorque * 0.1F;        
+        pedalFreePlay = maxMotorTorque * 0.03F;
+        rb = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        if (steering == 0 || steering > 0 && (steering < steeringPrev) || steering < 0 && (steering > steeringPrev))
+        {
+            if (Mathf.Abs(steeringPrev) > 0.5F)
+            {
+                if (steeringPrev > 0) steeringPrev -= 0.5F;
+                else steeringPrev += 0.5F;
+            } else
+            {
+                steeringPrev = 0F;
+            }
+            steering = steeringPrev;
+        } else
+        {
+            if (steering > 0) steeringPrev += 0.5F;
+            else steeringPrev -= 0.5F;
+            steering = steeringPrev;
+        }
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
+            // Brake
             if (motor > pedalFreePlay)
             {
                 axleInfo.leftWheel.brakeTorque = 0;
                 axleInfo.rightWheel.brakeTorque = 0;
-            } else
+            } else if (motor < -pedalFreePlay)
             {
-                var brake = Mathf.Abs(motor);
+                var brake = Mathf.Abs(motor) * 100F;
                 axleInfo.leftWheel.brakeTorque = brake;
                 axleInfo.rightWheel.brakeTorque = brake;
+            } else
+            {
+                float engineBrake = rb.velocity.magnitude * maxMotorTorque * 0.02F;
+                axleInfo.leftWheel.brakeTorque = engineBrake;
+                axleInfo.rightWheel.brakeTorque = engineBrake;
             }
+
+            // Steering
             if (axleInfo.steering)
             {
                 axleInfo.leftWheel.steerAngle = steering;
@@ -53,6 +82,8 @@ public class BusController : MonoBehaviour
 
                 steeringWheel.transform.localRotation = Quaternion.Euler(-90, 0, steering * 2);
             }
+
+            // Motor
             if (axleInfo.motor)
             {
                 if (motor > pedalFreePlay)
@@ -62,10 +93,6 @@ public class BusController : MonoBehaviour
                     }
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
-                } else
-                {
-                    axleInfo.leftWheel.motorTorque = 0;
-                    axleInfo.rightWheel.motorTorque = 0;
                 }
             }
         }
