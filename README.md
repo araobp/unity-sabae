@@ -72,6 +72,20 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 
 <img src="/doc/spot5.jpg" width=400px>
 
+## Thoughts on realtime 3D
+
+There are three ways I can come up with:
+
+- Stream screen capture as RTP media to a HTML5 video element on the client's web browser.
+- WebGL build.
+- Stream video from Unity's camera via Render Streaming.
+
+Render Streaming achives the best quality and the lowest latency.
+
+WebGL build is the best for demonstrating 3D models on a static web page (such as GitHub Pages).
+
+Screen capture (screen sharing) is the best for remote workers who are using Zoom or Teams.
+
 ## Reference
 
 - Unity Render Streaming: https://docs.unity3d.com/Packages/com.unity.renderstreaming@2.0/manual/index.html
