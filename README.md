@@ -1,6 +1,6 @@
 # Unity smart city （福井県鯖江市）
 
-(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long)
+(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long. However, [WebGL has some limitations](https://blog.pureweb.com/4-limitations-of-webgl-for-publishing-real-time-3d), so I will come back to Render Streaming later on.)
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
