@@ -1,6 +1,6 @@
 # Unity smart city （福井県鯖江市）
 
-(Work in progress)
+(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long)
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
