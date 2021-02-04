@@ -12,9 +12,12 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Demo
 
-[YouTube] https://youtu.be/mACBBLufDp0
+[HTML5/WebGL]
+- https://araobp.github.io/unity-smartcity/
 
-[WebGL-version] https://araobp.github.io/unity-smartcity/
+[YouTube]
+- https://youtu.be/mACBBLufDp0
+- https://youtu.be/mACBBLufDp0 
 
 ## Motivation
 
