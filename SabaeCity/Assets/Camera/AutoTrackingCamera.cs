@@ -2,19 +2,20 @@
 
 public class AutoTrackingCamera : MonoBehaviour
 {
+    public GameObject renderStreamingCamera;
     public GameObject target;
     public float distance = 3F;
     public float relativeHeight = 1F;
 
-    Transform _target;
-    Transform renderStreamingCamera;
+    Transform m_target;
+    Transform m_renderStreamingCamera;
     bool firstPersonView = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        _target = target.transform;
-        renderStreamingCamera = transform.Find("Render Streaming Camera");
+        m_target = target.transform;
+        m_renderStreamingCamera = renderStreamingCamera.transform;
     }
 
     void Update()
@@ -24,7 +25,7 @@ public class AutoTrackingCamera : MonoBehaviour
             ToggleCameraPosition();
         }
 
-        Vector3 move = _target.position - transform.position;
+        Vector3 move = m_target.position - transform.position;
         var lookAt = move.normalized;
         lookAt.y = 0;
         var rotation = Quaternion.LookRotation(lookAt);
@@ -34,7 +35,7 @@ public class AutoTrackingCamera : MonoBehaviour
         {
             move = move.normalized * (move.magnitude - distance);
             Vector3 pos = transform.position + move;
-            transform.position = new Vector3(pos.x, _target.position.y + relativeHeight, pos.z);
+            transform.position = new Vector3(pos.x, m_target.position.y + relativeHeight, pos.z);
         }
     }
 
@@ -44,10 +45,11 @@ public class AutoTrackingCamera : MonoBehaviour
 
         if (firstPersonView)
         {
-            renderStreamingCamera.Translate(0, 0, distance + 0.2F);
-        } else
+            m_renderStreamingCamera.localPosition = new Vector3(0, 0, distance + 0.05F);
+        }
+        else
         {
-            renderStreamingCamera.Translate(0, 0, -(distance + 0.2F));
+            m_renderStreamingCamera.localPosition = Vector3.zero;
         }
     }
 }
