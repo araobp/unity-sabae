@@ -21,11 +21,7 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Motivation
 
-I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
-
-It will be something like a call center with digital twin.
-
-This project is to prove that my expectaion on digital twin is right.
+I expect that digital twin will become a killer-app for remote sales and remote marketing in the era of 5G.
 
 ## Goal of this project
 
