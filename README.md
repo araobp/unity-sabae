@@ -38,7 +38,7 @@ This project is to prove that my expectaion on digital twin is right.
 ```
 WebGL build
 
-  [3D digital twin of Sabae city on Unity] ---- HTML5/WebGL ---> [Chrome browser on smartphone]
+  [3D digital twin of Sabae city on Unity] ---- HTML5/WebGL ---> [Chrome browser on PC]
 
 
 Render Streaming
