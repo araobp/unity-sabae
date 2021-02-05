@@ -36,9 +36,12 @@ This project is to prove that my expectaion on digital twin is right.
 - Remote tourist information services.
 
 ```
+WebGL build
 
   [3D digital twin of Sabae city on Unity] ---- HTML5/WebGL ---> [Chrome browser on smartphone]
 
+
+Render Streaming
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
   [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome browser on smartphone]
