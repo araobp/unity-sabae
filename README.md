@@ -1,6 +1,6 @@
 # Unity smart city （福井県鯖江市）
 
-(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long. However, [WebGL has some limitations](https://blog.pureweb.com/4-limitations-of-webgl-for-publishing-real-time-3d), so I will come back to Render Streaming later on.)
+(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long.)
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
@@ -29,7 +29,7 @@ This project is to prove that my expectaion on digital twin is right.
 
 ## Goal of this project
 
-- Run HTML5-based digital twin of Sabae（鯖江）city on Chrome/Firefox browser.
+- Run HTML5/WebGL-based digital twin of Sabae（鯖江）city on Chrome browser.
 - Or stream 3D digital twin of the city to my smartphone via RTP media with help from WebRTC.
 - Virtual tour in the city of 鯖江.
 - Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
@@ -46,10 +46,6 @@ This project is to prove that my expectaion on digital twin is right.
                 
 ```
 
-## Signalling server for Unity Render Streaming
-
-I use this signalling server for this project: https://github.com/araobp/signalling-server
-
 ## 3D model of Sabae city in Japan (distributed under CC-BY license)
 
 Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
@@ -59,6 +55,10 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
+
+## Signalling server for Unity Render Streaming
+
+I use this signalling server for this project: https://github.com/araobp/signalling-server
 
 ## Sightseeing spots in the digital twin
 
@@ -74,17 +74,22 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 
 ## Thoughts on realtime 3D
 
-There are three ways I can come up with:
+There are four ways I can come up with:
 
-- Stream screen capture as RTP media to a HTML5 video element on the client's web browser.
-- Stream video as RTP media from Unity's camera to a HTML5 video element via Render Streaming.
 - WebGL build.
+- Run a native build on a PC with WebRTC's screen sharing feature: navigator.mediaDevices.getDisplayMedia({video: true})
+- Embed Unity Render Streaming in a game.
+- Build a game for mobile: iOS and Android.
 
-Screen capture (screen sharing) is easy to use for remote workers who are using Zoom or Teams.
+In my environment,
+- WebGL build running on Chrome browser has been achiving good quality of 3D rendering, without a NVIDA GPU.
+- Unity Render Streaming has been achiving better quality than WebRTC's screen sharing.
 
-Render Streaming achives the best video quality and the lowest latency.
+I am not a sales person of luxurious cars, so the 3D rendering quality of WebGL saffices for my goal.
 
-WebGL build is the best for demonstrating 3D models on a static web page (such as GitHub Pages).
+And my conclusion:
+- WebGL build for PC users.
+- Unity Render Streaming for mobile users.
 
 ## Reference
 
