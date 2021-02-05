@@ -1,6 +1,6 @@
 # Unity smart city （福井県鯖江市）
 
-(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long)
+(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long. However, [WebGL has some limitations](https://blog.pureweb.com/4-limitations-of-webgl-for-publishing-real-time-3d), so I will come back to Render Streaming later on.)
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
@@ -12,13 +12,16 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Demo
 
-[YouTube] https://youtu.be/mACBBLufDp0
+[HTML5/WebGL]
+- https://araobp.github.io/unity-smartcity/
 
-[WebGL-version] https://araobp.github.io/unity-smartcity/
+[YouTube]
+- https://youtu.be/NR9jN1WamqI
+- https://youtu.be/mACBBLufDp0
 
 ## Motivation
 
-I expect that digital twin with WebGL and WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
+I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
 
 It will be something like a call center with digital twin.
 
@@ -68,6 +71,20 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 <img src="/doc/spot4.jpg" width=400px>
 
 <img src="/doc/spot5.jpg" width=400px>
+
+## Thoughts on realtime 3D
+
+There are three ways I can come up with:
+
+- Stream screen capture as RTP media to a HTML5 video element on the client's web browser.
+- Stream video as RTP media from Unity's camera to a HTML5 video element via Render Streaming.
+- WebGL build.
+
+Screen capture (screen sharing) is easy to use for remote workers who are using Zoom or Teams.
+
+Render Streaming achives the best video quality and the lowest latency.
+
+WebGL build is the best for demonstrating 3D models on a static web page (such as GitHub Pages).
 
 ## Reference
 
