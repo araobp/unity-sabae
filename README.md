@@ -57,7 +57,9 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 
 ## Signalling server for Unity Render Streaming
 
-I use this signalling server for this project: https://github.com/araobp/signalling-server
+I use this signalling server for this project: https://github.com/araobp/signalling-server.
+
+Note that WebGL build does not require such a signalling server.
 
 ## Sightseeing spots in the digital twin
 
