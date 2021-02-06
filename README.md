@@ -1,6 +1,6 @@
 # Unity smart city （福井県鯖江市）
 
-(Work in progress -- I am currently prioritizing WebGL-build over Render Streaming, because the time for downloading the game is not so long.)
+(Work in progress)
 
 <img src="/doc/screenshot_pixel4.jpg" width=500px>
 
@@ -54,6 +54,12 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
+## Code
+
+ I am currently prioritizing WebGL-build over Render Streaming.
+ 
+- [WebGL version](./SabaeCity_WebGL)
+- [RenderStreaming](./SabaeCity)
 
 ## Signalling server for Unity Render Streaming
 
