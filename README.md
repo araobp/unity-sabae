@@ -21,11 +21,7 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Motivation
 
-I expect that digital twin with WebRTC will become a killer-app for remote sales and remote marketing in the era of 5G.
-
-It will be something like a call center with digital twin.
-
-This project is to prove that my expectaion on digital twin is right.
+I expect that digital twin will become a killer-app for remote sales and remote marketing in the era of 5G.
 
 ## Goal of this project
 
@@ -61,7 +57,9 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 
 ## Signalling server for Unity Render Streaming
 
-I use this signalling server for this project: https://github.com/araobp/signalling-server
+I use this signalling server for this project: https://github.com/araobp/signalling-server.
+
+Note that WebGL build does not require such a signalling server.
 
 ## Sightseeing spots in the digital twin
 
