@@ -32,15 +32,24 @@ I expect that digital twin will become a killer-app for remote sales and remote 
 - Remote tourist information services.
 
 ```
-WebGL build
+WebGL build (run it on a local PC)
 
-  [3D digital twin of Sabae city on Unity] ---- HTML5/WebGL ---> [Chrome browser on PC]
+  [3D digital twin of Sabae city on Unity] ---- download HTML5/WebGL ---> [Chrome/Edge browser on PC]
 
 
-Render Streaming
+WebGL build with WebRTC's getDisplayMedia() (screen sharing)
+
+                     Zoom, Teams, Skype or any other services supporting screen sharing
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
-  [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome browser on smartphone]
+  [3D digital twin of Sabae city on a browser] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
+  
+
+Render Streaming (cloud gaming)
+
+                       +------------------ [Signalling server] ---------------+
+                       |                                                      |
+  [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
                                           <-- remote control --
                 
 ```
@@ -78,25 +87,6 @@ Note that WebGL build does not require such a signalling server.
 <img src="/doc/spot4.jpg" width=400px>
 
 <img src="/doc/spot5.jpg" width=400px>
-
-## Thoughts on realtime 3D
-
-There are four ways I can come up with:
-
-- WebGL build.
-- Run a native build on a PC with WebRTC's screen sharing feature: navigator.mediaDevices.getDisplayMedia({video: true})
-- Embed Unity Render Streaming in a game.
-- Build a game for mobile: iOS and Android.
-
-In my environment,
-- WebGL build running on Chrome browser has been achiving good quality of 3D rendering, without a NVIDA GPU.
-- Unity Render Streaming has been achiving better quality than WebRTC's screen sharing.
-
-I am not a sales person of luxurious cars, so the 3D rendering quality of WebGL saffices for my goal.
-
-And my conclusion:
-- WebGL build for PC users.
-- Unity Render Streaming for mobile users.
 
 ## Reference
 
