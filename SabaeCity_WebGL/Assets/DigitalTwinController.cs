@@ -14,6 +14,9 @@ public class DigitalTwinController : MonoBehaviour
     public GameObject busCamera;
     public GameObject guideCamera;
 
+    public Canvas busHelp;
+    public Canvas guideHelp;
+
     BusController m_busController;
     GuideController m_guideController;
 
@@ -28,12 +31,14 @@ public class DigitalTwinController : MonoBehaviour
     {
         bus.GetComponent<BusController>().enabled = state;
         busCamera.SetActive(state);
+        busHelp.enabled = state;
     }
 
     private void enableGuide(bool state)
     {
         guide.GetComponent<GuideController>().enabled = state;
         guideCamera.SetActive(state);
+        guideHelp.enabled = state;
     }
 
     private void Start()
