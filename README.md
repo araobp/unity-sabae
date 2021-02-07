@@ -42,14 +42,14 @@ WebGL build with WebRTC's getDisplayMedia() (screen sharing)
                      Zoom, Teams, Skype or any other services supporting screen sharing
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
-  [3D digital twin of Sabae city on a browser] ---- RTP media ---> [Chrome/Safari browser on smartphone]
+  [3D digital twin of Sabae city on a browser] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
   
 
 Render Streaming (cloud gaming)
 
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
-  [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome/Safari browser on smartphone]
+  [3D digital twin of Sabae city on Unity] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
                                           <-- remote control --
                 
 ```
