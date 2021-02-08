@@ -12,9 +12,6 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Demo
 
-[HTML5/WebGL]
-- **https://araobp.github.io/unity-smartcity/**
-
 [YouTube]
 - https://youtu.be/NR9jN1WamqI
 - https://youtu.be/mACBBLufDp0
@@ -26,25 +23,19 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Goal of this project
 
-- Run HTML5/WebGL-based digital twin of Sabae（鯖江）city on Chrome browser.
-- Or stream 3D digital twin of the city to my smartphone via RTP media with help from WebRTC.
+- Integration with [SkyWay](https://webrtc.ecl.ntt.com/en/) that is a WebRTC platform service by NTT Communications.
+- Screen-share or stream 3D digital twin of the city to PCs/smartphones via RTP media with help from WebRTC.
 - Virtual tour in the city of 鯖江.
 - Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
 - Remote tourist information services.
-- Integration with [SkyWay](https://webrtc.ecl.ntt.com/en/) that is a WebRTC platform service by NTT Communications.
 
 ```
-WebGL build (run it on a local PC)
-
-  [3D digital twin of Sabae city on Unity] ---- download HTML5/WebGL ---> [Chrome/Edge browser on PC]
-
-
-WebGL build with WebRTC's getDisplayMedia() (screen sharing)
+With WebRTC's getDisplayMedia() (screen sharing)
 
                      Zoom, Teams, Skype or any other services supporting screen sharing
                        +------------------ [Signalling server] ---------------+
                        |                                                      |
-  [3D digital twin of Sabae city on a browser] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
+  [3D digital twin of Sabae city on a PC] ---- RTP media ---> [Chrome/Safari browser on PC/smartphone]
   
 
 Render Streaming (cloud gaming)
@@ -66,17 +57,13 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 /Assets/SabaeCity/
 ```
 ## Code
-
- I am currently prioritizing WebGL-build over Render Streaming.
  
-- [WebGL version](./SabaeCity_WebGL)
 - [RenderStreaming](./SabaeCity)
+- [Without RenderStreaming](./SabaeCity2)
 
 ## Signalling server for Unity Render Streaming
 
-I use this signalling server for this project: https://github.com/araobp/signalling-server.
-
-Note that WebGL build does not require such a signalling server.
+I use this signalling server for this project for the time being: https://github.com/araobp/signalling-server.
 
 ## Sightseeing spots in the digital twin
 
@@ -89,6 +76,18 @@ Note that WebGL build does not require such a signalling server.
 <img src="/doc/spot4.jpg" width=400px>
 
 <img src="/doc/spot5.jpg" width=400px>
+
+## Thoughts on WebGL and Render Streaming
+
+I tested WebGL build for two weeks, but I gave up, because:
+- its performance becomes worser and worser.
+- it takes a long time to build, very frustrating. 
+- It does not run on mobile browsers.
+- It does not support multi-threading.
+
+Unity Render Streaming becomes unstable sometimes. I don't know what is the cause.
+
+Zoom and Teams support screen-sharing. At the moment, screen-sharing with WebRTC is the most stable and the easiest way for remote marketing using a digital twin. I try out SkyWay for the best quality of its streaming.
 
 ## Reference
 
