@@ -11,6 +11,8 @@ public class BusController : MonoBehaviour
 
     public GameObject steeringWheel;
 
+    public AudioSource audioSource;
+
     private float pedalFreePlay;
     private float steeringPrev = 0F;
 
@@ -97,6 +99,15 @@ public class BusController : MonoBehaviour
                     axleInfo.rightWheel.motorTorque = motor;
                 }
             }
+
+            // Engine sound
+            audioSource.pitch = rb.velocity.magnitude / 38F + 0.1F;
+            float accelVolume = 0F;
+            if (motor > pedalFreePlay)
+            {
+                accelVolume = 0.2F;
+            }
+            audioSource.volume = (1F + Mathf.Log10(audioSource.pitch)) * 0.6F + accelVolume + 0.2F;
         }
     }
 }
