@@ -21,7 +21,8 @@ My PC is not equipped with NVIDIA's GPU (software video encoding), but the laten
 
 ## Motivation
 
-I expect that digital twin will become a killer-app for remote sales and remote marketing in the era of 5G.
+- I expect that digital twin will become a killer-app for remote sales and remote marketing in the era of 5G.
+- I want to show what DX really means to those who are not familiar with 3D.
 
 ## Goal of this project
 
@@ -30,6 +31,7 @@ I expect that digital twin will become a killer-app for remote sales and remote 
 - Virtual tour in the city of 鯖江.
 - Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
 - Remote tourist information services.
+- Integration with [SkyWay](https://webrtc.ecl.ntt.com/en/) that is a WebRTC platform service by NTT Communications.
 
 ```
 WebGL build (run it on a local PC)
