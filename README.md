@@ -57,13 +57,9 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 /Assets/SabaeCity/
 ```
 ## Code
- 
-- [RenderStreaming](./SabaeCity)
-- [Without RenderStreaming](./SabaeCity2)
 
-## Signalling server for Unity Render Streaming
-
-I use this signalling server for this project for the time being: https://github.com/araobp/signalling-server.
+- [Without RenderStreaming](./SabaeCity2) <= I am currently working on this.
+- [RenderStreaming](./SabaeCity) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
 
 ## Sightseeing spots in the digital twin
 
@@ -81,9 +77,9 @@ I use this signalling server for this project for the time being: https://github
 
 I tested WebGL build for two weeks, but I gave up, because:
 - its performance becomes worser and worser.
-- it takes a long time to build, very frustrating. 
-- It does not run on mobile browsers.
-- It does not support multi-threading.
+- it takes a long time to build, very frustrating.
+- **It does not run on mobile browsers**
+- **It does not support multi-threading**
 
 Unity Render Streaming becomes unstable sometimes. I don't know what is the cause.
 
