@@ -83,7 +83,7 @@ I tested WebGL build for two weeks, but I gave up, because:
 
 Unity Render Streaming becomes unstable sometimes. I don't know what is the cause.
 
-Zoom and Teams support screen-sharing. At the moment, screen-sharing with WebRTC is the most stable and the easiest way for remote marketing using a digital twin. I try out SkyWay for the best quality of its streaming.
+Zoom and Teams support screen-sharing. At the moment, screen-sharing is the most stable and the easiest way for remote marketing using a digital twin. I try out SkyWay for the best quality of its streaming in this project.
 
 ## Reference
 
