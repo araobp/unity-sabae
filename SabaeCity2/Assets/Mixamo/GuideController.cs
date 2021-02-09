@@ -53,6 +53,8 @@ public class GuideController : MonoBehaviour
 
     void Update()
     {
+        float deltaTime = Time.deltaTime;
+
         // Control walker
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -84,11 +86,11 @@ public class GuideController : MonoBehaviour
 
         if (m_turningLeft)
         {
-            m_walker.Rotate(0, -rotationSpeed, 0);
+            m_walker.Rotate(0, -rotationSpeed * deltaTime * 50F, 0);
         }
         if (m_turningRight)
         {
-            m_walker.Rotate(0, rotationSpeed, 0);
+            m_walker.Rotate(0, rotationSpeed * deltaTime * 50F, 0);
         }
 
         // Sightseeing spots

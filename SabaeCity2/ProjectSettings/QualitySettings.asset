@@ -114,10 +114,7 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
-    - Standalone
     - iPhone
-    - Android
-    - WebGL
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -154,10 +151,7 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
-    - WebGL
-    - Android
     - iPhone
-    - Standalone
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 3
@@ -194,9 +188,7 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
-    - Standalone
     - iPhone
-    - Android
     - WebGL
   - serializedVersion: 2
     name: Ultra
@@ -238,6 +230,7 @@ QualitySettings:
     - iPhone
     - Android
     - WebGL
+    - Windows Store Apps
   m_PerPlatformDefaultQuality:
     Android: 2
     CloudRendering: 5

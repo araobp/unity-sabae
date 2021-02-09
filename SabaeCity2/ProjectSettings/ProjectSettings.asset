@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: SabaeCity_WebGL
+  productName: SabaeCity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -533,8 +533,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: SabaeCity_WebGL
-  metroPackageVersion: 
+  metroPackageName: SabaeCityWebGL
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
@@ -542,7 +542,7 @@ PlayerSettings:
   metroCertificateNotAfter: 802260da671dd801
   metroApplicationDescription: SabaeCity_WebGL
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: SabaeCity_WebGL
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
