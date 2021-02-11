@@ -37,8 +37,8 @@ public class BusController : MonoBehaviour
     {
         float axisVertical = 0F;
         float axisHorizontal = 0F;
-        float axisVertical1 = InputSubscriber.GetAxis("Vertical");
-        float axisHorizontal1 = InputSubscriber.GetAxis("Horizontal");
+        float axisVertical1 = Input.GetAxis("Vertical");
+        float axisHorizontal1 = Input.GetAxis("Horizontal");
         float axisVertical2 = InputSubscriber.GetAxis("Vertical");
         float axisHorizontal2 = InputSubscriber.GetAxis("Horizontal");
 
