@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public enum Actor
 {
@@ -54,7 +55,7 @@ public class DigitalTwinController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) || InputSubscriber.GetKeyDown(KeyCode.K))
         {
             ToggleActor();
         }        

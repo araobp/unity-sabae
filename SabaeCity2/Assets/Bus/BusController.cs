@@ -35,8 +35,32 @@ public class BusController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        float axisVertical = 0F;
+        float axisHorizontal = 0F;
+        float axisVertical1 = InputSubscriber.GetAxis("Vertical");
+        float axisHorizontal1 = InputSubscriber.GetAxis("Horizontal");
+        float axisVertical2 = InputSubscriber.GetAxis("Vertical");
+        float axisHorizontal2 = InputSubscriber.GetAxis("Horizontal");
+
+        if (axisVertical1 != 0)
+        {
+            axisVertical = axisVertical1;
+        } else if (axisVertical2 != 0)
+        {
+            axisVertical = axisVertical2;
+        }
+
+        if (axisHorizontal1 != 0)
+        {
+            axisHorizontal = axisHorizontal1;
+        }
+        else if (axisVertical2 != 0)
+        {
+            axisHorizontal = axisHorizontal2;
+        }
+
+        float motor = maxMotorTorque * axisVertical;
+        float steering = maxSteeringAngle * axisHorizontal;
         if (steering == 0 || steering > 0 && (steering < steeringPrev) || steering < 0 && (steering > steeringPrev))
         {
             if (Mathf.Abs(steeringPrev) > 0.5F)
@@ -57,7 +81,8 @@ public class BusController : MonoBehaviour
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
-            Debug.Log(motor);
+            //Debug.Log(motor);
+
             // Brake
             if (motor > pedalFreePlay)
             {
