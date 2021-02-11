@@ -42,14 +42,14 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 
 ### Without RenderStreaming
 
-=> [Without RenderStreaming](./SabaeCity2) <= I am currently working on this.
+[code](./SabaeCity2) <= I am currently working on this.
 
 The default platform is "PC".
 
 Switch the platform from PC to Android to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
 
 ### With RenderStreaming
-=> [With RenderStreaming](./SabaeCity) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
+[code](./SabaeCity) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
 
 ## Sightseeing spots in the digital twin
 
