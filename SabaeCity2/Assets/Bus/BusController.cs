@@ -6,17 +6,19 @@ public class BusController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos; // the information about each individual axle
 
-    public float maxMotorTorque; // maximum torque the motor can apply to wheel
-    public float maxSteeringAngle; // maximum steer angle the wheel can have
+    [SerializeField] float maxMotorTorque; // maximum torque the motor can apply to wheel
+    [SerializeField] float maxSteeringAngle; // maximum steer angle the wheel can have
 
-    public GameObject steeringWheel;
+    [SerializeField] GameObject steeringWheel;
 
-    public AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
 
-    private float pedalFreePlay;
-    private float steeringPrev = 0F;
+    float pedalFreePlay;
+    float steeringPrev = 0F;
 
-    private Rigidbody rb;
+    Rigidbody rb;
+
+    Animator animator;
 
     [System.Serializable]
     public class AxleInfo
@@ -31,6 +33,28 @@ public class BusController : MonoBehaviour
     {
         pedalFreePlay = maxMotorTorque * 0.03F;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInParent<Animator>();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            animator.SetTrigger("OpenMainDoor");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            animator.SetTrigger("CloseMainDoor");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            animator.SetTrigger("OpenFrontDoor");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            animator.SetTrigger("CloseFrontDoor");
+        }
     }
 
     void FixedUpdate()

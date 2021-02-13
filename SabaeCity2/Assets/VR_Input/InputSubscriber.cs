@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 public class InputSubscriber : MonoBehaviour
 {
-    [SerializeField] Properties properties;
+    [SerializeField] MqttParameters properties;
     // [SerializeField] Text text;
 
     IMqttClient mqttClient;
