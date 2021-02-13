@@ -64,6 +64,8 @@ The image above is a screenshot of video streaming from Unity Render Steraming t
 
 [code](./SabaeCity_RenderStreamingTest) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
 
+Maybe, I will try out Furioos in future for mobile.
+
 ## Reference
 
 - Unity Render Streaming: https://docs.unity3d.com/Packages/com.unity.renderstreaming@2.0/manual/index.html
