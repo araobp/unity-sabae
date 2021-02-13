@@ -36,11 +36,11 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 ## Code
 
-[code](./SabaeCity) <= I am currently working on this.
+[code](./SabaeCity)
 
 The default platform is "PC".
 
-Switch the platform from PC to Android to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
+Switch the platform setting from "PC" to "Android" to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
 
 ## Sightseeing spots in the digital twin
 
