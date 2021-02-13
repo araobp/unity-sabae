@@ -53,65 +53,63 @@ public class GuideController : MonoBehaviour
 
     void Update()
     {
-        float deltaTime = Time.deltaTime;
-
         // Control walker
 
-        if (Input.GetKeyDown(KeyCode.A) || InputSubscriber.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             TurnLeft();
         }
-        else if (Input.GetKeyUp(KeyCode.A) || InputSubscriber.GetKeyUp(KeyCode.A))
+        else if (Input.GetKeyUp(KeyCode.A))
         {
             TurnLeftStop();
         }
 
-        if (Input.GetKeyDown(KeyCode.D) || InputSubscriber.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             TurnRight();
         }
-        else if (Input.GetKeyUp(KeyCode.D) || InputSubscriber.GetKeyUp(KeyCode.D))
+        else if (Input.GetKeyUp(KeyCode.D))
         {
             TurnRightStop();
         }
 
-        if (Input.GetKeyDown(KeyCode.W) || InputSubscriber.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             Walk();
         }
-        else if (Input.GetKeyUp(KeyCode.W) || InputSubscriber.GetKeyUp(KeyCode.W))
+        else if (Input.GetKeyUp(KeyCode.W))
         {
             Stop();
         }
 
         if (m_turningLeft)
         {
-            m_walker.Rotate(0, -rotationSpeed * deltaTime * 50F, 0);
+            m_walker.Rotate(0, -rotationSpeed, 0);
         }
         if (m_turningRight)
         {
-            m_walker.Rotate(0, rotationSpeed * deltaTime * 50F, 0);
+            m_walker.Rotate(0, rotationSpeed, 0);
         }
 
         // Sightseeing spots
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) || InputSubscriber.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Spot1();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || InputSubscriber.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Spot2();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) || InputSubscriber.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Spot3();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) || InputSubscriber.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Spot4();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5) || InputSubscriber.GetKeyDown(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             Spot5();
         }

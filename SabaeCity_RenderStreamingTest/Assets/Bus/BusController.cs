@@ -6,19 +6,15 @@ public class BusController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos; // the information about each individual axle
 
-    [SerializeField] float maxMotorTorque; // maximum torque the motor can apply to wheel
-    [SerializeField] float maxSteeringAngle; // maximum steer angle the wheel can have
+    public float maxMotorTorque; // maximum torque the motor can apply to wheel
+    public float maxSteeringAngle; // maximum steer angle the wheel can have
 
-    [SerializeField] GameObject steeringWheel;
+    public GameObject steeringWheel;
 
-    [SerializeField] AudioSource audioSource;
+    private float pedalFreePlay;
+    private float steeringPrev = 0F;
 
-    float pedalFreePlay;
-    float steeringPrev = 0F;
-
-    Rigidbody rb;
-
-    Animator animator;
+    private Rigidbody rb;
 
     [System.Serializable]
     public class AxleInfo
@@ -33,58 +29,12 @@ public class BusController : MonoBehaviour
     {
         pedalFreePlay = maxMotorTorque * 0.03F;
         rb = GetComponent<Rigidbody>();
-        animator = GetComponentInParent<Animator>();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            animator.SetTrigger("OpenMainDoor");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            animator.SetTrigger("CloseMainDoor");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            animator.SetTrigger("OpenFrontDoor");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            animator.SetTrigger("CloseFrontDoor");
-        }
     }
 
     void FixedUpdate()
     {
-        float axisVertical = 0F;
-        float axisHorizontal = 0F;
-        float axisVertical1 = Input.GetAxis("Vertical");
-        float axisHorizontal1 = Input.GetAxis("Horizontal");
-        float axisVertical2 = InputSubscriber.GetAxis("Vertical");
-        float axisHorizontal2 = InputSubscriber.GetAxis("Horizontal");
-
-        if (axisVertical1 != 0)
-        {
-            axisVertical = axisVertical1;
-        } else if (axisVertical2 != 0)
-        {
-            axisVertical = axisVertical2;
-        }
-
-        if (axisHorizontal1 != 0)
-        {
-            axisHorizontal = axisHorizontal1;
-        }
-        else if (axisVertical2 != 0)
-        {
-            axisHorizontal = axisHorizontal2;
-        }
-
-        float motor = maxMotorTorque * axisVertical;
-        float steering = maxSteeringAngle * axisHorizontal;
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
         if (steering == 0 || steering > 0 && (steering < steeringPrev) || steering < 0 && (steering > steeringPrev))
         {
             if (Mathf.Abs(steeringPrev) > 0.5F)
@@ -105,8 +55,6 @@ public class BusController : MonoBehaviour
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
-            //Debug.Log(motor);
-
             // Brake
             if (motor > pedalFreePlay)
             {
@@ -117,8 +65,7 @@ public class BusController : MonoBehaviour
                 var brake = Mathf.Abs(motor) * 100F;
                 axleInfo.leftWheel.brakeTorque = brake;
                 axleInfo.rightWheel.brakeTorque = brake;
-            }
-            else
+            } else
             {
                 float engineBrake = rb.velocity.magnitude * maxMotorTorque * 0.02F;
                 axleInfo.leftWheel.brakeTorque = engineBrake;
@@ -148,15 +95,6 @@ public class BusController : MonoBehaviour
                     axleInfo.rightWheel.motorTorque = motor;
                 }
             }
-
-            // Engine sound
-            audioSource.pitch = rb.velocity.magnitude / 38F + 0.1F;
-            float accelVolume = 0F;
-            if (motor > pedalFreePlay)
-            {
-                accelVolume = 0.2F;
-            }
-            audioSource.volume = (1F + Mathf.Log10(audioSource.pitch)) * 0.6F + accelVolume + 0.2F;
         }
     }
 }
