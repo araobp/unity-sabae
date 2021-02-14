@@ -36,25 +36,6 @@ public class BusController : MonoBehaviour
         animator = GetComponentInParent<Animator>();
     }
 
-    void EvtHandler(string evt)
-    {
-        Debug.Log(evt);
-
-        string[] cmdValue = evt.Split(':');
-        string cmd = cmdValue[0];
-        float value = 0F;
-        if (cmdValue.Length > 1)
-        {
-            value = float.Parse(cmdValue[1]);
-        }
-
-        switch (cmd)
-        {
-
-        }
-    }
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha6))
@@ -78,29 +59,8 @@ public class BusController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float axisVertical = 0F;
-        float axisHorizontal = 0F;
-        float axisVertical1 = Input.GetAxis("Vertical");
-        float axisHorizontal1 = Input.GetAxis("Horizontal");
-        float axisVertical2 = Input.GetAxis("Trigger");
-        float axisHorizontal2 = Input.GetAxis("LeftAnalogX");
-
-        if (axisVertical1 != 0)
-        {
-            axisVertical = axisVertical1;
-        } else if (axisVertical2 != 0)
-        {
-            axisVertical = axisVertical2;
-        }
-
-        if (axisHorizontal1 != 0)
-        {
-            axisHorizontal = axisHorizontal1;
-        }
-        else if (axisHorizontal2 != 0)
-        {
-            axisHorizontal = axisHorizontal2;
-        }
+        float axisVertical = Input.GetAxis("Trigger");
+        float axisHorizontal = Input.GetAxis("LeftAnalogX");
 
         float motor = maxMotorTorque * axisVertical;
         float steering = maxSteeringAngle * axisHorizontal;
