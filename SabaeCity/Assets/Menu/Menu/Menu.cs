@@ -36,6 +36,8 @@ public class Menu : MonoBehaviour
     }
     SceneSelectionEvent m_sceneSelectionEvent = new SceneSelectionEvent();
 
+    GamepadF310 gamepad;
+
     void AddOnClickListeners(String scene, ButtonColumn column)
     {
         var button = GameObject.Find("Button" + scene).GetComponent<Button>();
@@ -53,7 +55,7 @@ public class Menu : MonoBehaviour
         }
 
         button.onClick.AddListener(
-            (UnityEngine.Events.UnityAction)delegate
+            delegate
             {
                 switch (scene)
                 {
@@ -106,18 +108,16 @@ public class Menu : MonoBehaviour
 
         Debug.Log($"Menu data read: {serObj}");
 
+        gamepad = gameObject.AddComponent<GamepadF310>().GetComponent<GamepadF310>();
+
         // Button selection initialization
         SelectButton();
-
-        Joypad joypad = gameObject.AddComponent<Joypad>();
-        joypad.AddHandler(evt =>
-        {
-            EvtHandler(evt);
-        });
     }
 
     private void Update()
     {
+        ProcessGamepad();
+
         if (m_sceneSelectionEvent.selectionUpdate)
         {
             SelectButton();
@@ -183,36 +183,32 @@ public class Menu : MonoBehaviour
 
     }
 
-    void EvtHandler(string evt)
+    void ProcessGamepad()
     {
-        Debug.Log(evt);
-        switch (evt)
-        {
-            case "START":  // Start scene
-                m_sceneSelectionEvent.invoke = true;
-                break;
-            case "HX:1":  // Move east
-                m_sceneSelectionEvent.moveLeftRight = ButtonColumn.RIGHT;
-                m_sceneSelectionEvent.moveUpDown = 0;
-                m_sceneSelectionEvent.selectionUpdate = true;
-                break;
-            case "HX:-1":  // Move west
-                m_sceneSelectionEvent.moveLeftRight = ButtonColumn.LEFT;
-                m_sceneSelectionEvent.moveUpDown = 0;
-                m_sceneSelectionEvent.selectionUpdate = true;
-                break;
-            case "HY:1": // Move north
-                m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
-                m_sceneSelectionEvent.moveUpDown = 1;
-                m_sceneSelectionEvent.selectionUpdate = true;
-                break;
-            case "HY:-1":  // Move south
-                m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
-                m_sceneSelectionEvent.moveUpDown = -1;
-                m_sceneSelectionEvent.selectionUpdate = true;
-                break;
+        m_sceneSelectionEvent.invoke = gamepad.GetKeyDown(GamepadF310KeyCode.START);
+
+        float dpadX = Input.GetAxis("DPadX");
+        if (dpadX > 0) {
+            m_sceneSelectionEvent.moveLeftRight = ButtonColumn.RIGHT;
+            m_sceneSelectionEvent.moveUpDown = 0;
+            m_sceneSelectionEvent.selectionUpdate = true;
+        } else if (dpadX < 0) {
+            m_sceneSelectionEvent.moveLeftRight = ButtonColumn.LEFT;
+            m_sceneSelectionEvent.moveUpDown = 0;
+            m_sceneSelectionEvent.selectionUpdate = true;
         }
 
+        float dpadY = Input.GetAxis("DPadY");
+        if (dpadY > 0) {
+            m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
+            m_sceneSelectionEvent.moveUpDown = 1;
+            m_sceneSelectionEvent.selectionUpdate = true;
+        } else if (dpadY < 0)
+        {
+            m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
+            m_sceneSelectionEvent.moveUpDown = -1;
+            m_sceneSelectionEvent.selectionUpdate = true;
+        }
     }
 
     void LoadScene(string scene)

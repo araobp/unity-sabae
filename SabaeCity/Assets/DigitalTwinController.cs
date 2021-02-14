@@ -14,8 +14,7 @@ public class DigitalTwinController : MonoBehaviour
     public GameObject busCamera;
     public GameObject guideCamera;
 
-    public Canvas busHelp;
-    public Canvas guideHelp;
+    public Canvas canvas;
 
     BusController m_busController;
     GuideController m_guideController;
@@ -27,18 +26,24 @@ public class DigitalTwinController : MonoBehaviour
 
     Actor m_actor;
 
-    private void enableBus(bool state)
-    {
-        bus.GetComponent<BusController>().enabled = state;
-        busCamera.SetActive(state);
-        busHelp.enabled = state;
-    }
-
     private void enableGuide(bool state)
     {
         guide.GetComponent<GuideController>().enabled = state;
         guideCamera.SetActive(state);
-        guideHelp.enabled = state;
+        if (state)
+        {
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Walk);
+        }
+    }
+
+    private void enableBus(bool state)
+    {
+        bus.GetComponent<BusController>().enabled = state;
+        busCamera.SetActive(state);
+        if (state)
+        {
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Drive);
+        }
     }
 
     private void Start()
@@ -46,34 +51,22 @@ public class DigitalTwinController : MonoBehaviour
         m_guideController = guide.GetComponent<GuideController>();
         m_busController = bus.GetComponent<BusController>();
 
-        m_actor = Actor.GUIDE;
-        enableBus(false);
-        enableGuide(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K) || InputSubscriber.GetKeyDown(KeyCode.K))
+        if (Menu.sceneSelection == SceneSelection.Walk)
         {
-            ToggleActor();
-        }        
-    }
-
-    void ToggleActor()
-    {
-        if (m_actor == Actor.GUIDE)
+            m_actor = Actor.GUIDE;
+            enableBus(false);
+            enableGuide(true);
+        } else
         {
             m_actor = Actor.BUS;
             enableBus(true);
             enableGuide(false);
         }
-        else
-        {
-            m_actor = Actor.GUIDE;
-            enableBus(false);
-            enableGuide(true);
-        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 
 }
