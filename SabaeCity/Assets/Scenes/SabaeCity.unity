@@ -344,7 +344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24855821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.46, z: -2.55}
+  m_LocalPosition: {x: 0, y: 0.53, z: 2.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1491179848}
@@ -1539,67 +1539,67 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.30199957
+      value: -0.2885
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8460026
+      value: 0.6909
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.002571786
+      value: 0.0077612647
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.012806142
+      value: 0.012144847
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9918754
+      value: 0.9934091
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.1265406
+      value: 0.113712884
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 14.542001
+      value: -13.0460005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 179.89001
+      value: 178.93102
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.465
+      value: 1.5230001
       objectReference: {fileID: 0}
     - target: {fileID: -7024875216769167446, guid: 13468a4c92bd664498a52660f2c20601,
         type: 3}
@@ -1909,8 +1909,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170, y: -400}
-  m_SizeDelta: {x: 300, y: 469.5}
+  m_AnchoredPosition: {x: 140, y: -250}
+  m_SizeDelta: {x: 210, y: 328.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425350384
 MonoBehaviour:
@@ -3215,7 +3215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220321477, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: field of view
-      value: 55
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 220321477, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: far clip plane
@@ -3239,11 +3239,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.845
+      value: 1.829
       objectReference: {fileID: 0}
     - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.08
+      value: 3.309
+      objectReference: {fileID: 0}
+    - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99618185
+      objectReference: {fileID: 0}
+    - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08730325
+      objectReference: {fileID: 0}
+    - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -9.3132246e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -2.9103828e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 220321478, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 10.017
       objectReference: {fileID: 0}
     - target: {fileID: 365082661, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: m_ForwardFriction.m_ExtremumSlip
@@ -3294,8 +3314,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24855822}
     - target: {fileID: 1663978439, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
+      propertyPath: centerOfMass
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663978439, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: maxMotorTorque
-      value: 1500
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 1663978439, guid: 861aab03a1c16694582ec177cf71a84c, type: 3}
       propertyPath: mainDoorAnimator
@@ -5581,8 +5605,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 267, y: -63}
-  m_SizeDelta: {x: 500, y: 120}
+  m_AnchoredPosition: {x: 773, y: -71}
+  m_SizeDelta: {x: 800, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114668149
 MonoBehaviour:
@@ -5616,10 +5640,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[operation keys]
+  m_Text: '[operation]
 
-    w: accel, a: turn left, d: turn right, s: brake,
-    r+w: reverse'
+    Right trigger: accel, Left trigger: brake, Left analog
+    axis X: steering wheel'
 --- !u!222 &1114668150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11799,8 +11823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -170, y: -400}
-  m_SizeDelta: {x: 300, y: 469.5}
+  m_AnchoredPosition: {x: -140, y: -250}
+  m_SizeDelta: {x: 210, y: 328.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916821205
 MonoBehaviour:

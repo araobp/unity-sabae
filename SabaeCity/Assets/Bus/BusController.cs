@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class BusController : MonoBehaviour
 {
     public List<AxleInfo> axleInfos; // the information about each individual axle
 
-    [SerializeField] float maxMotorTorque; // maximum torque the motor can apply to wheel
-    [SerializeField] float maxSteeringAngle; // maximum steer angle the wheel can have
+    [SerializeField] float maxMotorTorque = 3000F; // maximum torque the motor can apply to wheel
+    [SerializeField] float maxSteeringAngle = 30F; // maximum steer angle the wheel can have
 
     [SerializeField] GameObject steeringWheel;
 
     [SerializeField] AudioSource audioSource;
+
+    [SerializeField] float centerOfMass = 1.2F;
 
     float pedalFreePlay;
     float steeringPrev = 0F;
@@ -33,6 +34,7 @@ public class BusController : MonoBehaviour
     {
         pedalFreePlay = maxMotorTorque * 0.03F;
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = new Vector3(0F, centerOfMass, 0F);
         animator = GetComponentInParent<Animator>();
     }
 
