@@ -11,7 +11,6 @@ The image above is a screenshot of bus driving in the city.
 ## Demo
 
 [YouTube]
-- https://youtu.be/NR9jN1WamqI
 - https://youtu.be/mACBBLufDp0
 
 ## Motivation
