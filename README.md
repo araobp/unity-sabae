@@ -25,7 +25,9 @@ The image above is a screenshot of bus driving in the city.
 - Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
 - Remote tourist information services.
 
-## 3D model of Sabae city in Japan (distributed under CC-BY license)
+## Requirements
+
+### 3D model of Sabae city in Japan (distributed under CC-BY license)
 
 Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
 
@@ -34,13 +36,12 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 /Assets/SabaeCity/
 ```
+
+### Logicool F310 Gamepad
+
 ## Code
 
 [code](./SabaeCity)
-
-The default platform is "PC".
-
-Switch the platform setting from "PC" to "Android" to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
 
 ## Sightseeing spots in the digital twin
 
