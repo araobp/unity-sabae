@@ -8,10 +8,6 @@
 
 The image above is a screenshot of bus driving in the city.
 
-<img src="/doc/screenshot_pixel4.jpg" width=500px>
-
-The image above is a screenshot of video streaming from Unity Render Steraming to Google Pixel4. My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
-
 ## Demo
 
 [YouTube]
@@ -40,16 +36,11 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 ## Code
 
-### Without RenderStreaming
-
-[code](./SabaeCity2) <= I am currently working on this.
+[code](./SabaeCity)
 
 The default platform is "PC".
 
-Switch the platform from PC to Android to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
-
-### With RenderStreaming
-[code](./SabaeCity) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
+Switch the platform setting from "PC" to "Android" to build the app for a VR goggle (Cardboard), and run VR_Controller on you PC to control the app remotely. Refer to https://github.com/araobp/unity-excavator/blob/master/doc/VR_Input.md.
 
 ## Sightseeing spots in the digital twin
 
@@ -62,6 +53,18 @@ Switch the platform from PC to Android to build the app for a VR goggle (Cardboa
 <img src="/doc/spot4.jpg" width=400px>
 
 <img src="/doc/spot5.jpg" width=400px>
+
+## Render Streaming and WebGL
+
+In the beginning of this project, I tested WebGL and Render Streaming to run this game on smartphones. But I gave up to use them for some reasons.
+
+<img src="/doc/screenshot_pixel4.jpg" width=500px>
+
+The image above is a screenshot of video streaming from Unity Render Steraming to Google Pixel4. My PC is not equipped with NVIDIA's GPU (software video encoding), but the latency of its streaming is very small.
+
+[code](./SabaeCity_RenderStreamingTest) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
+
+Maybe, I will try out Furioos in future for mobile.
 
 ## Reference
 
