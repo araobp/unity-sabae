@@ -1,4 +1,4 @@
-# Unity smart city （福井県鯖江市）
+# Sabae city （福井県鯖江市）
 
 [The location on the Google map](https://www.google.com/maps/place/Sabae,+Fukui/@35.9463339,136.1851007,19z).
 
