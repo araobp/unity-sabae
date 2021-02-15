@@ -13,17 +13,6 @@ The image above is a screenshot of bus driving in the city.
 [YouTube]
 https://youtu.be/NR9jN1WamqI
 
-## Motivation
-
-- I expect that digital twin will become a killer-app for remote sales and remote marketing in the era of 5G.
-- I want to show what DX really means to those who are not familiar with 3D.
-
-## Goal of this project
-
-- Virtual tour in the city of 鯖江.
-- Smart city simulation: surveillance cameras, traffic signals, bus driving, platform door operation in the station etc. 
-- Remote tourist information services.
-
 ## Requirements
 
 ### 3D model of Sabae city in Japan (distributed under CC-BY license)
@@ -37,6 +26,8 @@ The 3D model is not included in this repo. Just download it, inport it into Asse
 ```
 
 ### Logicool F310 Gamepad
+
+https://gaming.logicool.co.jp/products/gamepads/f310-gamepad.940-000137.html
 
 ## Code
 
