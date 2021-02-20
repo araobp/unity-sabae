@@ -105,6 +105,12 @@ public class Menu : MonoBehaviour
 
         AddOnClickListeners("Quit", ButtonColumn.OTHERS);
 
+        GameObject.Find("ButtonInfo").GetComponent<Button>().onClick.AddListener(
+            delegate {
+                Application.OpenURL("https://data.city.sabae.lg.jp/opendata-list/");
+            }
+        );
+
         // Menu data persistency
         if (!File.Exists(Properties.MENU_DATA_FILE))
         {
