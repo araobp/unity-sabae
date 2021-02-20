@@ -3,11 +3,121 @@ guid: b5e74089628520c4e968a7ab9c83301f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chassis
+    second: {fileID: 2100000, guid: 6658d3d635642d346a9a7a129dee2124, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dashboard
+    second: {fileID: 2100000, guid: 7a274aba626b5464eb6a269633ddc34e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: a17f1a0ee7de98448ad160801d02a23a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HeadLight
+    second: {fileID: 2100000, guid: fe588e22890b6834d86bbd67201cc9fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Indicator
+    second: {fileID: 2100000, guid: d5ab349bac4c7124da6a204608a27908, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightCover
+    second: {fileID: 2100000, guid: fb9e5c9fdffd5d149851a8a938012efd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: ece1ca0e2c893cc42bc9a02299c298cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.001
+    second: {fileID: 2100000, guid: a31671f606fe5544e913677ef5a4a2d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NumberPlate
+    second: {fileID: 2100000, guid: da11423c03bc3b143a06e9688c8d1450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic
+    second: {fileID: 2100000, guid: acc5de2f1df59d34aa9483e54704367c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RearLight
+    second: {fileID: 2100000, guid: 1912bb09c4160a846b61557efd9001cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber
+    second: {fileID: 2100000, guid: d3195ac1a5c49c44aa60e5e03335e724, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber.001
+    second: {fileID: 2100000, guid: b20fca95fff76a3438619a6b0da89668, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RustyMetal
+    second: {fileID: 2100000, guid: 4d86d126d2390944cbc58c1498dcfddd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seat
+    second: {fileID: 2100000, guid: c98136d85f9cf19438d10d01f39ae808, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SeatBase
+    second: {fileID: 2100000, guid: 4c5f653d2a11af64084bb2befcdfbaef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shaft
+    second: {fileID: 2100000, guid: 084a8ec039aff0d408020db99cbe1b08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SkyCarBody
+    second: {fileID: 2100000, guid: 5108bdfcd2890fe4b9ab5eb3605bcdf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SkyCarLightCoversWhite
+    second: {fileID: 2100000, guid: 060f9c87b7c92044f94f694cab24993e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SteeringWheel
+    second: {fileID: 2100000, guid: c63e4e9b739bac44aa9106215137b1c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tyre
+    second: {fileID: 2100000, guid: e7448b32a6c80d8489b2a97a15150b99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel
+    second: {fileID: 2100000, guid: b88cb956bc92f3f41be8e3a5b399f61d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

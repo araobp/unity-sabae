@@ -4,11 +4,15 @@ public class DigitalTwinController : MonoBehaviour
 {
     public GameObject guide;
     public GameObject bus;
+    public GameObject car;
 
-    public GameObject busCamera;
     public GameObject guideCamera;
+    public GameObject busCamera;
+    public GameObject carCamera;
 
     public Canvas canvas;
+
+    public SceneSelection m_scene = SceneSelection.Inactive; 
 
     private void enableGuide(bool state)
     {
@@ -16,7 +20,7 @@ public class DigitalTwinController : MonoBehaviour
         guideCamera.SetActive(state);
         if (state)
         {
-            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Walk);
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Guide);
         }
     }
 
@@ -26,20 +30,53 @@ public class DigitalTwinController : MonoBehaviour
         busCamera.SetActive(state);
         if (state)
         {
-            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Drive);
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Bus);
+        }
+    }
+
+    private void enableCar(bool state)
+    {
+        car.GetComponent<CarController>().enabled = state;
+        carCamera.SetActive(state);
+        if (state)
+        {
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Bus);
         }
     }
 
     private void Start()
     {
-        if (Menu.sceneSelection == SceneSelection.Walk)
+        SceneSelection scene = SceneSelection.Inactive;
+        
+        if (m_scene != SceneSelection.Inactive)
         {
-            enableBus(false);
-            enableGuide(true);
+            scene = m_scene;
         } else
         {
-            enableBus(true);
-            enableGuide(false);
+            scene = Menu.sceneSelection;
+        }
+
+        switch (scene) {
+            case SceneSelection.Guide:
+                enableGuide(true);
+                enableBus(false);
+                enableCar(false);
+                break;
+            case SceneSelection.Bus:
+                enableGuide(false);
+                enableBus(true);
+                enableCar(false);
+                break;
+            case SceneSelection.Car:
+                enableGuide(false);
+                enableBus(false);
+                enableCar(true);
+                break;
+            default:
+                enableGuide(true);
+                enableBus(false);
+                enableCar(false);
+                break;
         }
     }
 

@@ -33,13 +33,13 @@ public class CanvasManager : MonoBehaviour
 
         switch (selection)
         {
-            case SceneSelection.Walk:
+            case SceneSelection.Guide:
                 textGuide.SetActive(true);
                 textBus.SetActive(false);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
                 break;
-            case SceneSelection.Drive:
+            case SceneSelection.Bus:
                 textGuide.SetActive(false);
                 textBus.SetActive(true);
                 rawImageBusMirrorLeft.SetActive(true);

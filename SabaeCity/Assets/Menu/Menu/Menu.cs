@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 public class Menu : MonoBehaviour
 {
-    public static SceneSelection sceneSelection = SceneSelection.Menu_Inactive;
+    public static SceneSelection sceneSelection = SceneSelection.Inactive;
 
     enum ButtonColumn
     {
@@ -37,6 +37,8 @@ public class Menu : MonoBehaviour
     SceneSelectionEvent m_sceneSelectionEvent = new SceneSelectionEvent();
 
     GamepadF310 gamepad;
+    float m_dPadX = 0F;
+    float m_dPadY = 0F;
 
     void AddOnClickListeners(String scene, ButtonColumn column)
     {
@@ -59,22 +61,27 @@ public class Menu : MonoBehaviour
             {
                 switch (scene)
                 {
-                    case "Walk":
-                        sceneSelection = SceneSelection.Walk;
+                    case "Guide":
+                        sceneSelection = SceneSelection.Guide;
                         LoadScene("SabaeCity");
                         break;
 
-                    case "Drive":
-                        sceneSelection = SceneSelection.Drive;
+                    case "Bus":
+                        sceneSelection = SceneSelection.Bus;
+                        LoadScene("SabaeCity");
+                        break;
+
+                    case "Car":
+                        sceneSelection = SceneSelection.Car;
                         LoadScene("SabaeCity");
                         break;
 
                     case "Unused1":
-                        sceneSelection = SceneSelection.Drive;
+                        sceneSelection = SceneSelection.Bus;
                         //LoadScene("...");
                         break;
                     case "Unused2":
-                        sceneSelection = SceneSelection.Drive;
+                        sceneSelection = SceneSelection.Bus;
                         //LoadScene("...");
                         break;
 
@@ -89,8 +96,9 @@ public class Menu : MonoBehaviour
     void Start()
     {
         // Add buttons to listeners
-        AddOnClickListeners("Walk", ButtonColumn.LEFT);
-        AddOnClickListeners("Drive", ButtonColumn.LEFT);
+        AddOnClickListeners("Guide", ButtonColumn.LEFT);
+        AddOnClickListeners("Bus", ButtonColumn.LEFT);
+        AddOnClickListeners("Car", ButtonColumn.LEFT);
 
         AddOnClickListeners("Unused1", ButtonColumn.RIGHT);
         AddOnClickListeners("Unused2", ButtonColumn.RIGHT);
@@ -188,26 +196,40 @@ public class Menu : MonoBehaviour
         m_sceneSelectionEvent.invoke = gamepad.GetKeyDown(GamepadF310KeyCode.START);
 
         float dpadX = Input.GetAxis("DPadX");
-        if (dpadX > 0) {
+        if (dpadX > 0 && m_dPadX == 0F) {
             m_sceneSelectionEvent.moveLeftRight = ButtonColumn.RIGHT;
             m_sceneSelectionEvent.moveUpDown = 0;
             m_sceneSelectionEvent.selectionUpdate = true;
-        } else if (dpadX < 0) {
+        } else if (dpadX < 0 && m_dPadX == 0F) {
             m_sceneSelectionEvent.moveLeftRight = ButtonColumn.LEFT;
             m_sceneSelectionEvent.moveUpDown = 0;
             m_sceneSelectionEvent.selectionUpdate = true;
         }
+        if (dpadX == 0F) {
+            m_dPadX = 0F;
+        } else
+        {
+            m_dPadX = dpadX;
+        }
 
         float dpadY = Input.GetAxis("DPadY");
-        if (dpadY > 0) {
+        if (dpadY > 0 && m_dPadY == 0F) {
             m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
             m_sceneSelectionEvent.moveUpDown = 1;
             m_sceneSelectionEvent.selectionUpdate = true;
-        } else if (dpadY < 0)
+        } else if (dpadY < 0 && m_dPadY == 0F)
         {
             m_sceneSelectionEvent.moveLeftRight = ButtonColumn.OTHERS;
             m_sceneSelectionEvent.moveUpDown = -1;
             m_sceneSelectionEvent.selectionUpdate = true;
+        }
+        if (dpadY == 0F)
+        {
+            m_dPadY = 0F;
+        }
+        else
+        {
+            m_dPadY = dpadY;
         }
     }
 

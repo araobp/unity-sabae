@@ -1,6 +1,7 @@
 ﻿public enum SceneSelection
 {
-    Walk,
-    Drive,
-    Menu_Inactive
+    Guide,
+    Bus,
+    Car,
+    Inactive
 };
