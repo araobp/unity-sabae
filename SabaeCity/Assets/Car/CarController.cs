@@ -10,8 +10,6 @@ public class CarController : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
 
-    [SerializeField] float centerOfMass = 1.2F;
-
     float pedalFreePlay;
     float steeringPrev = 0F;
 
@@ -32,7 +30,6 @@ public class CarController : MonoBehaviour
     {
         pedalFreePlay = maxMotorTorque * 0.03F;
         rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = new Vector3(0F, centerOfMass, 0F);
         animator = GetComponentInParent<Animator>();
     }
 
@@ -69,7 +66,7 @@ public class CarController : MonoBehaviour
             if (Mathf.Abs(steeringPrev) > 0.5F)
             {
                 if (steeringPrev > 0) steeringPrev -= 0.5F;
-                else steeringPrev += 0.5F;
+                else steeringPrev += 1F;
             } else
             {
                 steeringPrev = 0F;
@@ -78,7 +75,7 @@ public class CarController : MonoBehaviour
         } else
         {
             if (steering > 0) steeringPrev += 0.5F;
-            else steeringPrev -= 0.5F;
+            else steeringPrev -= 1F;
             steering = steeringPrev;
         }
 
@@ -93,7 +90,7 @@ public class CarController : MonoBehaviour
                 axleInfo.rightWheel.brakeTorque = 0;
             } else if (motor < -pedalFreePlay)
             {
-                var brake = Mathf.Abs(motor) * 100F;
+                var brake = Mathf.Abs(motor) * 30F;
                 axleInfo.leftWheel.brakeTorque = brake;
                 axleInfo.rightWheel.brakeTorque = brake;
             }

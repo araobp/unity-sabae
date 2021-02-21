@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass
-    second: {fileID: 2100000, guid: a17f1a0ee7de98448ad160801d02a23a, type: 2}
+    second: {fileID: 2100000, guid: 1ee0ea2505ab12240baed0a150e73e2a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -33,12 +33,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LightCover
-    second: {fileID: 2100000, guid: fb9e5c9fdffd5d149851a8a938012efd, type: 2}
+    second: {fileID: 2100000, guid: 961e7cbb451dcf8478d37a6f2abdd1bc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal
-    second: {fileID: 2100000, guid: ece1ca0e2c893cc42bc9a02299c298cb, type: 2}
+    second: {fileID: 2100000, guid: 51f7e739ed51625419ae727359b30e2d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -48,22 +48,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NumberPlate
-    second: {fileID: 2100000, guid: da11423c03bc3b143a06e9688c8d1450, type: 2}
+    second: {fileID: 2100000, guid: cf89c6c7c5a4a694eaf1ab055124d8dd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Plastic
-    second: {fileID: 2100000, guid: acc5de2f1df59d34aa9483e54704367c, type: 2}
+    second: {fileID: 2100000, guid: 584bded04e7d92746b1b05b2a292f459, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: RearLight
-    second: {fileID: 2100000, guid: 1912bb09c4160a846b61557efd9001cf, type: 2}
+    second: {fileID: 2100000, guid: be6f1f519a0c76644a643377b85e3a8d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Rubber
-    second: {fileID: 2100000, guid: d3195ac1a5c49c44aa60e5e03335e724, type: 2}
+    second: {fileID: 2100000, guid: 12c1884d5fb280e44917118894762a71, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -78,7 +78,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Seat
-    second: {fileID: 2100000, guid: c98136d85f9cf19438d10d01f39ae808, type: 2}
+    second: {fileID: 2100000, guid: 28c3435e30b096e40973816bc34a03fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -108,7 +108,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tyre
-    second: {fileID: 2100000, guid: e7448b32a6c80d8489b2a97a15150b99, type: 2}
+    second: {fileID: 2100000, guid: 0f5b238220af10d4ba8b779358d1ca0b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -117,7 +117,7 @@ ModelImporter:
   materials:
     materialImportMode: 1
     materialName: 0
-    materialSearch: 2
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
