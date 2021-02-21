@@ -40,7 +40,7 @@ public class DigitalTwinController : MonoBehaviour
         carCamera.SetActive(state);
         if (state)
         {
-            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Bus);
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Car);
         }
     }
 
