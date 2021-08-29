@@ -15,12 +15,6 @@ https://youtu.be/NR9jN1WamqI
 
 ## Requirements
 
-### 3D model of Sabae city in Japan (distributed under CC-BY license)
-
-Its 3D model is provided in SketchUp format (skp) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
-
-A modified version of the 3D model is included in this repo.
-
 ### Logicool F310 Gamepad
 
 https://gaming.logicool.co.jp/products/gamepads/f310-gamepad.940-000137.html
@@ -52,6 +46,14 @@ The image above is a screenshot of video streaming from Unity Render Steraming t
 [code](./SabaeCity_RenderStreamingTest) <= I leave it intact for a while. I use this signalling server for this: https://github.com/araobp/signalling-server.
 
 Maybe, I will try out Furioos in future for mobile.
+
+## Licence
+
+### 3D model of Sabae city in Japan (distributed under CC-BY license)
+
+This project uses a 3D model (in skp format) on the following web site (Japanese): https://www.city.sabae.fukui.jp/about_city/opendata/data_list/3d-shotengai.html
+
+It is distributed under CC-BY. A modified version of the 3D model is included in this repo.
 
 ## Reference
 
