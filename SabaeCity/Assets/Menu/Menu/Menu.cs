@@ -36,7 +36,6 @@ public class Menu : MonoBehaviour
     }
     SceneSelectionEvent m_sceneSelectionEvent = new SceneSelectionEvent();
 
-    GamepadF310 gamepad;
     float m_dPadX = 0F;
     float m_dPadY = 0F;
 
@@ -116,8 +115,6 @@ public class Menu : MonoBehaviour
 
         Debug.Log($"Menu data read: {serObj}");
 
-        gamepad = gameObject.AddComponent<GamepadF310>().GetComponent<GamepadF310>();
-
         // Button selection initialization
         SelectButton();
     }
@@ -193,7 +190,8 @@ public class Menu : MonoBehaviour
 
     void ProcessGamepad()
     {
-        m_sceneSelectionEvent.invoke = gamepad.GetKeyDown(GamepadF310KeyCode.START);
+        // Logicool Gamepad F310 start button
+        m_sceneSelectionEvent.invoke = Input.GetKeyDown(KeyCode.Joystick1Button7);
 
         float dpadX = Input.GetAxis("DPadX");
         if (dpadX > 0 && m_dPadX == 0F) {

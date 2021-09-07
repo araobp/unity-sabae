@@ -1,20 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
-    GamepadF310 gamepad;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        gamepad = GameObject.FindWithTag("Gamepad").GetComponent<GamepadF310>();
-    }
-
     void Update()
     {
-        if (gamepad.GetKeyDown(GamepadF310KeyCode.BACK)) {
+        // Logicool Gamepad F310 back button
+        if (Input.GetKeyDown(KeyCode.Joystick1Button6)) {  
             Close();
         }   
     }
