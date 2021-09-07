@@ -8,6 +8,12 @@
 
 The image above is a screenshot of bus driving in the city.
 
+## Motivation
+
+I have been enjoying [Construction Simulator](https://www.bau-simulator.de/en) on Nintendo Switch Lite over the past year.
+
+This project is to study how such a simulator can be developed on Unity. Sabae-city has been kindly providing a free 3D model of the city in SketchUp format. I use it as a starting point for this study.
+
 ## Demo
 
 [YouTube]
