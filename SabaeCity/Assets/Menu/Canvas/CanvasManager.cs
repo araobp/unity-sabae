@@ -30,8 +30,6 @@ public class CanvasManager : MonoBehaviour
         GameObject textBus = transform.Find("TextBus").gameObject;
         GameObject rawImageBusMirrorLeft = transform.Find("RawImageBusMirrorLeft").gameObject;
         GameObject rawImageBusMirrorRight = transform.Find("RawImageBusMirrorRight").gameObject;
-        GameObject rawImageCarMirrorLeft = transform.Find("RawImageCarMirrorLeft").gameObject;
-        GameObject rawImageCarMirrorRight = transform.Find("RawImageCarMirrorRight").gameObject;
 
         switch (selection)
         {
@@ -40,24 +38,18 @@ public class CanvasManager : MonoBehaviour
                 textBus.SetActive(false);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
-                rawImageCarMirrorLeft.SetActive(false);
-                rawImageCarMirrorRight.SetActive(false);
                 break;
             case SceneSelection.Bus:
                 textGuide.SetActive(false);
                 textBus.SetActive(true);
                 rawImageBusMirrorLeft.SetActive(true);
                 rawImageBusMirrorRight.SetActive(true);
-                rawImageCarMirrorLeft.SetActive(false);
-                rawImageCarMirrorRight.SetActive(false);
                 break;
-            case SceneSelection.Car:
+            case SceneSelection.Drone:
                 textGuide.SetActive(false);
                 textBus.SetActive(true);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
-                rawImageCarMirrorLeft.SetActive(true);
-                rawImageCarMirrorRight.SetActive(true);
                 break;
             default:
                 break;

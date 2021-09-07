@@ -71,8 +71,8 @@ public class Menu : MonoBehaviour
                         LoadScene("SabaeCity");
                         break;
 
-                    case "Car":
-                        sceneSelection = SceneSelection.Car;
+                    case "Drone":
+                        sceneSelection = SceneSelection.Drone;
                         LoadScene("SabaeCity");
                         break;
 
@@ -98,18 +98,12 @@ public class Menu : MonoBehaviour
         // Add buttons to listeners
         AddOnClickListeners("Guide", ButtonColumn.LEFT);
         AddOnClickListeners("Bus", ButtonColumn.LEFT);
-        AddOnClickListeners("Car", ButtonColumn.LEFT);
+        AddOnClickListeners("Drone", ButtonColumn.LEFT);
 
         AddOnClickListeners("Unused1", ButtonColumn.RIGHT);
         AddOnClickListeners("Unused2", ButtonColumn.RIGHT);
 
         AddOnClickListeners("Quit", ButtonColumn.OTHERS);
-
-        GameObject.Find("ButtonInfo").GetComponent<Button>().onClick.AddListener(
-            delegate {
-                Application.OpenURL("https://data.city.sabae.lg.jp/opendata-list/");
-            }
-        );
 
         // Menu data persistency
         if (!File.Exists(Properties.MENU_DATA_FILE))
