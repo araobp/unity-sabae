@@ -6,9 +6,10 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
         // Logicool Gamepad F310 back button
-        if (Input.GetKeyDown(KeyCode.Joystick1Button6)) {  
+        if (Input.GetKeyDown(KeyCode.Joystick1Button6))
+        {
             Close();
-        }   
+        }
     }
 
     public void Close()
@@ -39,7 +40,7 @@ public class CanvasManager : MonoBehaviour
                 break;
             case SceneSelection.Drone:
                 textGuide.SetActive(false);
-                textBus.SetActive(true);
+                textBus.SetActive(false);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
                 break;

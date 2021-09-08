@@ -1,1 +1,1 @@
-{"leftColumnIdx":1,"rightColumnIdx":0,"activeColumn":0}
+{"leftColumnIdx":2,"rightColumnIdx":1,"activeColumn":0}

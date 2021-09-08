@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
-
 public class DigitalTwinController : MonoBehaviour
 {
     public GameObject guide;
     public GameObject bus;
+    public GameObject drone;
 
     public GameObject guideCamera;
     public GameObject busCamera;
+    public GameObject droneCamera;
 
     public Canvas canvas;
 
-    public SceneSelection m_scene = SceneSelection.Inactive; 
+    public SceneSelection m_scene = SceneSelection.Inactive;
 
-    private void enableGuide(bool state)
+    private void EnableGuide(bool state)
     {
         guide.GetComponent<GuideController>().enabled = state;
         guideCamera.SetActive(state);
@@ -22,7 +23,7 @@ public class DigitalTwinController : MonoBehaviour
         }
     }
 
-    private void enableBus(bool state)
+    private void EnableBus(bool state)
     {
         bus.GetComponent<BusController>().enabled = state;
         busCamera.SetActive(state);
@@ -32,34 +33,50 @@ public class DigitalTwinController : MonoBehaviour
         }
     }
 
+    private void EnableDrone(bool state)
+    {
+        drone.GetComponent<DroneController>().enabled = state;
+        droneCamera.SetActive(state);
+        if (state)
+        {
+            canvas.GetComponent<CanvasManager>().SetMode(SceneSelection.Drone);
+        }
+    }
+
     private void Start()
     {
         SceneSelection scene = SceneSelection.Inactive;
-        
+
         if (m_scene != SceneSelection.Inactive)
         {
             scene = m_scene;
-        } else
+        }
+        else
         {
             scene = Menu.sceneSelection;
         }
 
-        switch (scene) {
+        switch (scene)
+        {
             case SceneSelection.Guide:
-                enableGuide(true);
-                enableBus(false);
+                EnableGuide(true);
+                EnableBus(false);
+                EnableDrone(false);
                 break;
             case SceneSelection.Bus:
-                enableGuide(false);
-                enableBus(true);
+                EnableGuide(false);
+                EnableBus(true);
+                EnableDrone(false);
                 break;
             case SceneSelection.Drone:
-                enableGuide(false);
-                enableBus(false);
+                EnableGuide(false);
+                EnableBus(false);
+                EnableDrone(true);
                 break;
             default:
-                enableGuide(true);
-                enableBus(false);
+                EnableGuide(true);
+                EnableBus(false);
+                EnableDrone(false);
                 break;
         }
     }
