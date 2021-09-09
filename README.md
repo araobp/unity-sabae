@@ -21,6 +21,10 @@ https://youtu.be/NR9jN1WamqI
 
 ## Requirements
 
+### Windows 10
+
+This app runs on Windows 10. It may run on Mac but not confirmed yet.
+
 ### Logicool F310 Gamepad
 
 https://gaming.logicool.co.jp/products/gamepads/f310-gamepad.940-000137.html
