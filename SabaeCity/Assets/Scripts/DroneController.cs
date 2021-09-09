@@ -1,15 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DroneController : MonoBehaviour
 {
-    private Camera camera;
-
-    private bool fastMode = true;
-
-    private bool toggleBehindCamera = false;
-
     const float RX_FAST = 50F;
     const float RY_FAST = 30F;
     const float X_FAST = 60F;
@@ -17,13 +9,17 @@ public class DroneController : MonoBehaviour
 
     const float RX_SLOW = 5F;
     const float RY_SLOW = 5F;
-    const float X_SLOW = 15F;
+    const float X_SLOW = 25F;
     const float Y_SLOW = 6F;
+
+    private Camera m_Camera;
+    private bool m_FastMode = true;
+    private bool m_ToggleBehindCamera = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        camera = transform.Find("Camera").GetComponent<Camera>();
+        m_Camera = transform.Find("Camera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -41,23 +37,23 @@ public class DroneController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button5))  // RB
         {
-            fastMode ^= true;
+            m_FastMode ^= true;
         }
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button4))  // LB
         {
-            toggleBehindCamera ^= true;
-            if (toggleBehindCamera)
+            m_ToggleBehindCamera ^= true;
+            if (m_ToggleBehindCamera)
             {
-                camera.transform.Translate(new Vector3(0F, 0F, -1.3F));
+                m_Camera.transform.Translate(new Vector3(0F, 0F, -1.3F));
             }
             else
             {
-                camera.transform.Translate(new Vector3(0F, 0F, 1.3F));
+                m_Camera.transform.Translate(new Vector3(0F, 0F, 1.3F));
             }
         }
 
-        if (fastMode)
+        if (m_FastMode)
         {
             transform.Translate(new Vector3(-rightAnalogX * RX_FAST * deltaTime, 0, 0));
             transform.Translate(new Vector3(0, leftAnalogY * Y_FAST * deltaTime, 0));
@@ -74,67 +70,12 @@ public class DroneController : MonoBehaviour
 
         if (dPadX != 0)
         {
-            camera.fieldOfView -= 20F * dPadX * deltaTime;
+            m_Camera.fieldOfView -= 20F * dPadX * deltaTime;
         }
 
         if (dPadY != 0)
         {
-            camera.transform.Rotate(new Vector3(-20F * dPadY * deltaTime, 0f, 0f));
+            m_Camera.transform.Rotate(new Vector3(-20F * dPadY * deltaTime, 0f, 0f));
         }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            camera.transform.Rotate(new Vector3(-0.1F, 0f, 0f));
-        }
-        else if (Input.GetKey(KeyCode.X))
-        {
-            camera.transform.Rotate(new Vector3(0.1F, 0f, 0f));
-        }
-
-        if (Input.GetKey(KeyCode.U))
-        {
-            camera.fieldOfView -= 0.1F;
-        }
-        else if (Input.GetKey(KeyCode.N))
-        {
-            camera.fieldOfView += 0.1F;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        { //
-            transform.Translate(new Vector3(0, 0.03F, 0));
-        }
-        else if (Input.GetKey(KeyCode.S))
-        { //
-            transform.Translate(new Vector3(0, -0.03F, 0));
-        }
-
-        if (Input.GetKey(KeyCode.L))
-        {
-            transform.Translate(new Vector3(-0.1F, 0, 0));
-        }
-        else if (Input.GetKey(KeyCode.J))
-        {
-            transform.Translate(new Vector3(+0.1F, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.I))
-        {
-            transform.Translate(new Vector3(0, 0, -0.1F));
-        }
-        else if (Input.GetKey(KeyCode.K))
-        {
-            transform.Translate(new Vector3(0, 0, +0.1F));
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(new Vector3(0, 0.3F, 0));
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(new Vector3(0, -0.3F, 0));
-        }
-
     }
 }

@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 public class Menu : MonoBehaviour
 {
     public static SceneSelection sceneSelection = SceneSelection.Inactive;
-
     enum ButtonColumn
     {
         LEFT, RIGHT, OTHERS

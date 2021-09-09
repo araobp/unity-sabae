@@ -26,7 +26,6 @@ public class GuideController : MonoBehaviour
     List<Transform> m_spots = new List<Transform>();
     int idx = 0;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -57,29 +56,27 @@ public class GuideController : MonoBehaviour
 
         // Control walker
 
-        if (Input.GetKeyDown(KeyCode.A))
+        float leftAnalogX = Input.GetAxis("LeftAnalogX");
+        float rightAnalogY = Input.GetAxis("RightAnalogY");
+
+        if (leftAnalogX <= -0.1F)
         {
             TurnLeft();
         }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            TurnLeftStop();
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (leftAnalogX >= 0.1F)
         {
             TurnRight();
         }
-        else if (Input.GetKeyUp(KeyCode.D))
+        else if (leftAnalogX < 0.1F && leftAnalogX > -0.1F)
         {
-            TurnRightStop();
+            TurnStop();
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (rightAnalogY >= 0.1F)
         {
             Walk();
         }
-        else if (Input.GetKeyUp(KeyCode.W))
+        else if (rightAnalogY < 0.1F)
         {
             Stop();
         }
@@ -95,27 +92,7 @@ public class GuideController : MonoBehaviour
 
         // Sightseeing spots
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Spot1();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Spot2();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Spot3();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            Spot4();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            Spot5();
-        }
-        else if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4))  // LB
         {
             NextSpot();
         }
@@ -180,18 +157,11 @@ public class GuideController : MonoBehaviour
         }
     }
 
-    public void TurnLeftStop()
+    public void TurnStop()
     {
         if (IsStateName("Walking"))
         {
             m_turningLeft = false;
-        }
-    }
-
-    public void TurnRightStop()
-    {
-        if (IsStateName("Walking"))
-        {
             m_turningRight = false;
         }
     }
@@ -215,36 +185,4 @@ public class GuideController : MonoBehaviour
         if (idx > 4) idx = 0;
         RelocateTo(m_spots[idx]);
     }
-
-    public void Spot1()
-    {
-        RelocateTo(m_spot1);
-        idx = 0;
-    }
-
-    public void Spot2()
-    {
-        RelocateTo(m_spot2);
-        idx = 1;
-    }
-
-    public void Spot3()
-    {
-        RelocateTo(m_spot3);
-        idx = 2;
-    }
-
-    public void Spot4()
-    {
-        RelocateTo(m_spot4);
-        idx = 3;
-    }
-
-    public void Spot5()
-    {
-        RelocateTo(m_spot5);
-        idx = 4;
-    }
-
-
 }

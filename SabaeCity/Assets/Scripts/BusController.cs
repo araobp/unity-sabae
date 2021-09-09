@@ -41,7 +41,7 @@ public class BusController : MonoBehaviour
         pedalFreePlay = maxMotorTorque * 0.03F;
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0F, centerOfMass, 0F);
-        animator = GetComponentInParent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()

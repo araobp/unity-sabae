@@ -21,6 +21,7 @@ public class CanvasManager : MonoBehaviour
     {
         GameObject textGuide = transform.Find("TextGuide").gameObject;
         GameObject textBus = transform.Find("TextBus").gameObject;
+        GameObject textDrone = transform.Find("TextDrone").gameObject;
         GameObject rawImageBusMirrorLeft = transform.Find("RawImageBusMirrorLeft").gameObject;
         GameObject rawImageBusMirrorRight = transform.Find("RawImageBusMirrorRight").gameObject;
 
@@ -29,18 +30,21 @@ public class CanvasManager : MonoBehaviour
             case SceneSelection.Guide:
                 textGuide.SetActive(true);
                 textBus.SetActive(false);
+                textDrone.SetActive(false);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
                 break;
             case SceneSelection.Bus:
                 textGuide.SetActive(false);
                 textBus.SetActive(true);
+                textDrone.SetActive(false);
                 rawImageBusMirrorLeft.SetActive(true);
                 rawImageBusMirrorRight.SetActive(true);
                 break;
             case SceneSelection.Drone:
                 textGuide.SetActive(false);
                 textBus.SetActive(false);
+                textDrone.SetActive(true);
                 rawImageBusMirrorLeft.SetActive(false);
                 rawImageBusMirrorRight.SetActive(false);
                 break;
